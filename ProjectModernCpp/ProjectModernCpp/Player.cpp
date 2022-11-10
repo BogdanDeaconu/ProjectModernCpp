@@ -1,0 +1,14 @@
+#include "Player.h"
+
+std::ostream& operator<<(std::ostream& os, const Player& player)
+{
+	return os <<
+		static_cast<std::string>(player.m_name) << " " <<
+		static_cast<int>(player.m_color);
+}
+
+Player::Player(const std::string& name, Color color) :
+	m_name(name),
+	m_color(color)
+{
+}
