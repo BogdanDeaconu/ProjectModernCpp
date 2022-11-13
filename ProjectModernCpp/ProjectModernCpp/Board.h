@@ -9,6 +9,10 @@ public:
 	using Position = std::pair<uint8_t, uint8_t>;
 
 public:
+	//getter
+	const std::optional<Player>& operator[](Position pos) const;
+	//setter
+	std::optional<Player>& operator[](Position  pos);
 	
 	friend std::ostream& operator<<(std::ostream& out, const Board& board);
 
