@@ -136,6 +136,7 @@
     <ClInclude Include="Question.h" />
     <ClInclude Include="QuestionWithBool.h" />
     <ClInclude Include="QuestionWithInteger.h" />
+    <ClInclude Include="Territory.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Board.cpp" />
@@ -144,6 +145,7 @@
     <ClCompile Include="QuestionWithBool.cpp" />
     <ClCompile Include="QuestionWithInteger.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Territory.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
