@@ -15,12 +15,12 @@ public:
 
 public:
 	Player(const std::string& name, Color color);
+	Color GetColor() const;
+	Player& operator=(Player&& player);
 	friend std::ostream& operator <<(std::ostream& os, const Player& player);
 
 private:
 	std::string m_name;
 	Color m_color;
-
-
 };
 
