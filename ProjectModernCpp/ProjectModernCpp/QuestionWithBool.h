@@ -10,7 +10,7 @@ public:
 
 	const std::unordered_map<std::string, bool> getAnswers() const;
 	
-	bool CheckAnswer(std::string answer, const QuestionWithBool& question);
+	bool CheckAnswer(std::string answer);
 	
 	friend std::ostream& operator<<(std::ostream& os, const QuestionWithBool & question);
 private:

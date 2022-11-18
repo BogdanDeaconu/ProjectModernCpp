@@ -13,9 +13,9 @@ const int QuestionWithInteger::getAnswer() const
 	return m_answer;
 }
 
-bool QuestionWithInteger::CheckAnswer(int answer, const QuestionWithInteger& question)
+bool QuestionWithInteger::CheckAnswer(int answer)
 {
-	if( question.getAnswer() - answer == 0)
+	if (answer == m_answer)
 	{
 		return true;
 	}

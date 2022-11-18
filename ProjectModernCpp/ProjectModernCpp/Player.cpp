@@ -22,6 +22,6 @@ Player::Color Player::GetColor() const
 Player& Player::operator=(Player&& player)
 {
 	m_color = player.m_color;
-	new (&player) Player;
+	//new (&player) Player;
 	return *this;
 }

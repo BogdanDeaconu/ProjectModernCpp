@@ -14,22 +14,26 @@ const std::unordered_map<std::string, bool> QuestionWithBool::getAnswers() const
 }
 
 
-bool QuestionWithBool::CheckAnswer(std::string answer, const QuestionWithBool & question)
+bool QuestionWithBool::CheckAnswer(std::string answer)
 {
-	for (auto index : question.getAnswers())
+	for (auto& pair : m_answers)
 	{
-		if (index.first == answer)
+		if (pair.first == answer)
 		{
-			return true;
+			if(pair.second)
+			{
+				return true;
+			}
 		}
 	}
 	return false;
 }
 
+
 std::ostream& operator<<(std::ostream& os, const QuestionWithBool& question)
 {
 	os << question.getQuestion() << std::endl;
-	for (auto answer : question.getAnswers())
+	for (auto& answer : question.getAnswers())
 	{
 		os << answer.first << " ";
 	}

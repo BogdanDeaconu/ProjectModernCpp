@@ -9,7 +9,7 @@ public:
 
 	const int getAnswer() const;
 
-	bool CheckAnswer(int answer, const QuestionWithInteger& question);
+	bool CheckAnswer(int answer);
 
 	friend std::ostream& operator<<(std::ostream& os, const QuestionWithInteger& question);
 private:
