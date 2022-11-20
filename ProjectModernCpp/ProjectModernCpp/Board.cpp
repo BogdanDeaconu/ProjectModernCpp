@@ -23,13 +23,13 @@ std::ostream& operator<<(std::ostream& out, const Board& board)
 	return out;
 }
 
-const std::optional<Player>& Board::operator[](Position pos) const
+const std::optional<Territory>& Board::operator[](Position pos) const
 {
 	const auto& [line, column] = pos;
 	return m_board[line * m_width + column];
 }
 
-std::optional<Player>& Board::operator[](Position pos)
+std::optional<Territory>& Board::operator[](Position pos)
 {
 	const auto& [line, column] = pos;
 	return m_board[line * m_width + column];

@@ -17,3 +17,8 @@ void Territory::ConquerTerritory(Color color)
 {
 	m_color = color;
 }
+
+std::ostream& operator<<(std::ostream& out, const Territory& territory)
+{
+	return out << "Score: " << territory.m_score << " " << "Color: " << static_cast<int> (territory.m_color);
+}
