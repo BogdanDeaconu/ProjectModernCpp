@@ -1,8 +1,9 @@
 #pragma once
 #include"Player.h"
-#include<array>
+#include<vector>
 #include<optional>
 #include<cstdint>
+#include<array>
 class Board
 {
 public:
@@ -15,13 +16,16 @@ public:
 	std::optional<Player>& operator[](Position  pos);
 	
 	friend std::ostream& operator<<(std::ostream& out, const Board& board);
-
+	
+	void ChooseNumberOfPlayers(int n);
+	int GetNumberOfPlayers();
+	void SetBoardDimensions();
 private:
-	static const std::size_t height = 3;
-	static const std::size_t width = 3;
-	static const std::size_t size = height * width;
-
+	static std::size_t m_height;
+	static std::size_t m_width;
+	static std::size_t m_size;
+	static int NumberOfPlayers;	
 private:
-	std::array<std::optional<Player>, size>m_board;
+	std::vector<std::optional<Player>>m_board;
 };
 
