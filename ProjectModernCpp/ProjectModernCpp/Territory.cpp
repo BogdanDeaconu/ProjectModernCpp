@@ -13,9 +13,14 @@ Territory Territory::GetTerritory(const Territory& territory)
 	return territory;
 }
 
-void Territory::ConquerTerritory(Color color)
+void Territory::ConquerTerritory(Player::Color color)
 {
-	m_color = color;
+	m_color = static_cast<Territory::Color>(color);
+}
+
+void Territory::SetTerritoryScore(uint32_t n)
+{
+	m_score = n;
 }
 
 std::ostream& operator<<(std::ostream& out, const Territory& territory)

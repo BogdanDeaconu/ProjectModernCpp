@@ -47,3 +47,10 @@ void Game::ReadBoolQ(std::vector<QuestionWithBool*>& Boolquestions)
 		Boolquestions.push_back(new QuestionWithBool(question, umap));
 	}
 }
+
+void Game::SelectBaseCoordinates(Board::Position pos, Territory& territory, const Player& player)
+{
+	territory.ConquerTerritory(player.GetColor());
+	territory.SetTerritoryScore(300);
+	board[pos] = territory;
+}

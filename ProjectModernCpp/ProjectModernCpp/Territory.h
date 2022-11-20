@@ -1,6 +1,7 @@
 #pragma once
 #include<cstdint>
 #include<iostream>
+#include"Player.h"
 class Territory
 {
 public:
@@ -11,16 +12,17 @@ public:
 		Red,
 		Yellow,
 		Green,
-		Gray
+		Grey
 	};
 public:
 	
 	Territory(const uint16_t score, Color color);
 	Territory GetTerritory(const Territory& territory);
-	void ConquerTerritory(Color color);
+	void ConquerTerritory(Player::Color color);
+	void SetTerritoryScore(uint32_t n);
 	friend std::ostream& operator<<(std::ostream& out, const Territory& territory);
 private:
-	const uint16_t m_score;
+	uint32_t m_score;
 	Color m_color;
 };
 
