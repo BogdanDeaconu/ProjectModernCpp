@@ -18,8 +18,10 @@ public:
 
 public:
 	Player(const std::string& name, Color color);
+	Player& operator=(Player&& player);
 	Color GetColor() const;
 	friend std::ostream& operator <<(std::ostream& os, const Player& player);
+	void setBase(Board::Position pos, Territory& base, const Player& player);
 	
 private:
 	std::string m_name;

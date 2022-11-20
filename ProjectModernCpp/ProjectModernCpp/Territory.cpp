@@ -13,6 +13,11 @@ Territory Territory::GetTerritory(const Territory& territory)
 	return territory;
 }
 
+Territory::Color Territory::GetColor() const
+{
+	return m_color;
+}
+
 void Territory::ConquerTerritory(Player::Color color)
 {
 	m_color = static_cast<Territory::Color>(color);
