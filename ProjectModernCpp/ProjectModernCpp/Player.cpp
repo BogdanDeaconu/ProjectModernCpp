@@ -36,3 +36,12 @@ void Player::setBase(Board::Position pos, Territory& base, const Player& player)
 	board[pos] = base;
 }
 
+void Player::setInactivePlayer(Player player, Territory base)
+{
+	/*if (base.GetColor() != player.GetColor())
+		player.m_name = "Inactiv";
+*/
+}
+
+
+
