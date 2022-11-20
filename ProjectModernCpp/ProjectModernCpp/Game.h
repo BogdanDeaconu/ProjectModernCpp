@@ -18,6 +18,7 @@ public:
 	void ReadBoolQ(std::vector <QuestionWithBool*>& Boolquestions);
 	
 	void SelectBaseCoordinates(Board::Position pos, Territory& territory, const Player& player);
+
 private:
 	static const std::size_t numberOfBoolQ = 70;
 	static const std::size_t number0fIntQ = 30;

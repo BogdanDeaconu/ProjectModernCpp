@@ -146,7 +146,6 @@
     <ClCompile Include="Question.cpp" />
     <ClCompile Include="QuestionWithBool.cpp" />
     <ClCompile Include="QuestionWithInteger.cpp" />
-    <ClCompile Include="Source1.cpp" />
     <ClCompile Include="Territory.cpp" />
   </ItemGroup>
   <ItemGroup>
