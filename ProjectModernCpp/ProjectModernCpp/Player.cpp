@@ -19,9 +19,9 @@ Player::Color Player::GetColor() const
 	return m_color;
 }
 
-Player& Player::operator=(Player&& player)
-{
-	m_color = player.m_color;
+//Player& Player::operator=(Player&& player)
+//{
+	//m_color = player.m_color;
 	//new (&player) Player;
-	return *this;
-}
+	//return *this;
+//}

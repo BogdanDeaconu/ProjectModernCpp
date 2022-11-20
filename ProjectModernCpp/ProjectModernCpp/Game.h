@@ -5,14 +5,16 @@
 #include <time.h>
 #include <fstream>
 
-class Game : public QuestionWithBool, public QuestionWithInteger
+class Game 
 {
 public:
+	Game();
+	
 	QuestionWithBool* GetBoolQuestion();
 	QuestionWithInteger* GetIntegerQuestion();
 	
 	void ReadIntQ(std::vector <QuestionWithInteger *>& Intquestions);
-	
+	void ReadBoolQ(std::vector <QuestionWithBool*>& Boolquestions);
 	
 	
 private:

@@ -150,6 +150,7 @@
     <ClCompile Include="Territory.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="QuestionsBool.txt" />
     <Text Include="QuestionsInteger.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,0 +1,10 @@
+Care este capitala Romaniei?
+Bucuresti 0
+Pitesti 1
+Timisoara 1
+Cluj-Napoca 1
+Care este capitala Spaniei?
+Madrid 0
+Barcelona 1
+Valencia 1
+Sevilla 1
