@@ -14,8 +14,9 @@ public:
 		Red,
 		Yellow,
 		Green
-	};
-
+	}; 
+		
+ 
 public:
 	Player(const std::string& name, Color color);
 	Player& operator=(Player&& player);
