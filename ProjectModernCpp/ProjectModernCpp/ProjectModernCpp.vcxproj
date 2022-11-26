@@ -134,7 +134,6 @@
     <ClInclude Include="Board.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="Question.h" />
     <ClInclude Include="QuestionWithBool.h" />
     <ClInclude Include="QuestionWithInteger.h" />
     <ClInclude Include="Territory.h" />
@@ -143,7 +142,6 @@
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Question.cpp" />
     <ClCompile Include="QuestionWithBool.cpp" />
     <ClCompile Include="QuestionWithInteger.cpp" />
     <ClCompile Include="Territory.cpp" />

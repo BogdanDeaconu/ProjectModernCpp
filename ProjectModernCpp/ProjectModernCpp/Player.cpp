@@ -43,5 +43,12 @@ void Player::setInactivePlayer(Player player, Territory base)
 */
 }
 
+int Player::PlayerAnswer()
+{
+	int answer;
+	std::cin >> answer;
+	return answer;
+}
+
 
 

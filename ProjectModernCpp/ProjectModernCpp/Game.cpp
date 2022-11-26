@@ -1,4 +1,6 @@
 #include "Game.h"
+#include <boost/regex/v4/iterator_category.hpp>
+#include <boost/regex/v5/iterator_category.hpp>
 
 Game::Game()
 {
@@ -53,4 +55,34 @@ void Game::SelectBaseCoordinates(Board::Position pos, Territory& territory, cons
 	territory.ConquerTerritory(player.GetColor());
 	territory.SetTerritoryScore(300);
 	board[pos] = territory;
+}
+
+void Game::Duel(Player& player1, Player& player2)
+{
+	QuestionWithInteger* question = GetIntegerQuestion();
+	std::cout << question->GetQuestion();
+	std::cout << "\n";
+	int answer1 = player1.PlayerAnswer();
+	int answer2 = player2.PlayerAnswer();
+	if (question->CheckAnswer(answer1) == 0 and question->CheckAnswer(answer2) = 0) {
+		//player1 +100
+		//player2 -100
+	}
+	if (question->CheckAnswer(answer1) != 0 and question->CheckAnswer(answer2) == 0) {
+			//player1 -100
+			//player2 +100
+	}
+	if (question->CheckAnswer(answer1) == 0 and question->CheckAnswer(answer1) == 0) {
+			//functie comparare timp cu time.h
+	}
+	if (question->CheckAnswer(answer1) != 0 and question->CheckAnswer(answer1) != 0) {
+		if (question->CheckAnswer(answer1) > question->CheckAnswer(answer2)) {
+				//player1 +100
+				//player2 -100
+		}
+		else {
+				//player1 -100
+				//player2 +100
+		}
+	}
 }

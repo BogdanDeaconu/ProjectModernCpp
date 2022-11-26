@@ -1,7 +1,8 @@
 #pragma once
-#include "Question.h"
+#include <string>
+#include <iostream>
 
-class QuestionWithInteger : public Question
+class QuestionWithInteger 
 {
 public:
 	QuestionWithInteger(std::string question, int answer);
@@ -9,22 +10,14 @@ public:
 
 	const int getAnswer() const;
 
-	template <typename T>
-    T CheckAnswer(int answer);
+    int CheckAnswer(int answer);
 	
-	friend std::ostream& operator<<(std::ostream& os, const QuestionWithInteger& question);
+	std::string GetQuestion();
+	
+	friend std::ostream& operator<<(std::ostream& os, QuestionWithInteger& question);
 private:
 	int m_answer;
+	std::string m_question;
 };
 
-template <typename T>
-T QuestionWithInteger::CheckAnswer(int answer)
-{
-	if (m_answer - answer == 0)
-	{
-		return true;
-	}
-	else
-		return abs(m_answer - answer);
-}
 

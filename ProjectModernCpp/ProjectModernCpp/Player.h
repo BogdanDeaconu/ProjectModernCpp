@@ -24,6 +24,9 @@ public:
 	friend std::ostream& operator <<(std::ostream& os, const Player& player);
 	void setBase(Board::Position pos, Territory& base, const Player& player);
 	void setInactivePlayer(Player player, Territory base);
+
+	int PlayerAnswer();
+	
 private:
 	std::string m_name;
 	Color m_color;

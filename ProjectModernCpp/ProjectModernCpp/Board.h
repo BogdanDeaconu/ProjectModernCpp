@@ -21,6 +21,8 @@ public:
 	void ChooseNumberOfPlayers(int n);
 	int GetNumberOfPlayers();
 	void SetBoardDimensions();
+
+	
 private:
 	static std::size_t m_height;
 	static std::size_t m_width;

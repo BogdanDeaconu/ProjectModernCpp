@@ -4,6 +4,7 @@
 #include <array>
 #include <time.h>
 #include <fstream>
+#include <random>
 #include"Board.h"
 #include"Player.h"
 class Game 
@@ -19,12 +20,13 @@ public:
 	
 	void SelectBaseCoordinates(Board::Position pos, Territory& territory, const Player& player);
 
+	void Duel(Player& player1, Player& player2);
 private:
 	static const std::size_t numberOfBoolQ = 70;
 	static const std::size_t number0fIntQ = 30;
 private:
-	std::vector<QuestionWithBool *>m_questionswithboool;
-	std::vector<QuestionWithInteger *>m_questionswithinteger;
+	std::vector<QuestionWithBool*>m_questionswithboool;
+	std::vector<QuestionWithInteger*>m_questionswithinteger;
 	Board board;
 };
 

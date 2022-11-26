@@ -1,17 +1,22 @@
 #include "QuestionWithBool.h"
 
 QuestionWithBool::QuestionWithBool(std::string question, std::unordered_map<std::string, bool> answers)
-	:Question(question),
-	 m_answers(answers)
+	:m_question(question), m_answers(answers)
 {  }
 
 QuestionWithBool::~QuestionWithBool()
 {  }
 
-const std::unordered_map<std::string, bool> QuestionWithBool::getAnswers() const
+const std::unordered_map<std::string, bool> QuestionWithBool::GetAnswers() const
 {
 	return m_answers;
 }
+
+std::string QuestionWithBool::GetQuestion() const
+{
+	return m_question;
+}
+
 
 
 bool QuestionWithBool::CheckAnswer(std::string answer)
@@ -32,8 +37,8 @@ bool QuestionWithBool::CheckAnswer(std::string answer)
 
 std::ostream& operator<<(std::ostream& os, const QuestionWithBool& question)
 {
-	os << question.getQuestion() << std::endl;
-	for (auto& answer : question.getAnswers())
+	os << question.m_question << std::endl;
+	for (auto& answer : question.GetAnswers())
 	{
 		os << answer.first << " ";
 	}
