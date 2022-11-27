@@ -1,4 +1,5 @@
 #include "Game.h"
+#include"Player.h"
 #include <boost/regex/v4/iterator_category.hpp>
 #include <boost/regex/v5/iterator_category.hpp>
 
@@ -84,5 +85,19 @@ void Game::Duel(Player& player1, Player& player2)
 				//player1 -100
 				//player2 +100
 		}
+	}
+}
+
+void Game::StartGame(int PlayersNumber)
+{
+	board.ChooseNumberOfPlayers(PlayersNumber);
+	board.SetBoardDimensions();
+	std::vector<Player>players;
+	while (PlayersNumber!=0)
+	{
+		Player player;
+		player.SetColor(Player::Color::Blue);
+		player.SetName("name");
+		players.push_back(player);
 	}
 }

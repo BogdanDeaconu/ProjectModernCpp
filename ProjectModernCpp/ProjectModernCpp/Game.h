@@ -21,6 +21,8 @@ public:
 	void SelectBaseCoordinates(Board::Position pos, Territory& territory, const Player& player);
 
 	void Duel(Player& player1, Player& player2);
+	
+	void StartGame(int PlayersNumber);
 private:
 	static const std::size_t numberOfBoolQ = 70;
 	static const std::size_t number0fIntQ = 30;

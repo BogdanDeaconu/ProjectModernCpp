@@ -19,12 +19,14 @@ public:
  
 public:
 	Player(const std::string& name, Color color);
+	Player();
 	Player& operator=(Player&& player);
 	Color GetColor() const;
 	friend std::ostream& operator <<(std::ostream& os, const Player& player);
 	void setBase(Board::Position pos, Territory& base, const Player& player);
 	void setInactivePlayer(Player player, Territory base);
-
+	void SetName(const std::string& name);
+	void SetColor(const Player::Color& color);
 	int PlayerAnswer();
 	
 private:

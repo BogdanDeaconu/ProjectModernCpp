@@ -24,6 +24,10 @@ Player::Player(const std::string& name, Color color) :
 {
 }
 
+Player::Player()
+{
+}
+
 Player::Color Player::GetColor() const
 {
 	return m_color;
@@ -41,6 +45,16 @@ void Player::setInactivePlayer(Player player, Territory base)
 	/*if (base.GetColor() != player.GetColor())
 		player.m_name = "Inactiv";
 */
+}
+
+void Player::SetName(const std::string& name)
+{
+	m_name = name;
+}
+
+void Player::SetColor(const Player::Color& color)
+{
+	m_color = color;
 }
 
 int Player::PlayerAnswer()
