@@ -92,12 +92,48 @@ void Game::StartGame(int PlayersNumber)
 {
 	board.ChooseNumberOfPlayers(PlayersNumber);
 	board.SetBoardDimensions();
+	uint8_t rounds;
 	std::vector<Player>players;
-	while (PlayersNumber!=0)
+	if (PlayersNumber==2)
 	{
-		Player player;
-		player.SetColor(Player::Color::Blue);
-		player.SetName("name");
-		players.push_back(player);
+		rounds = 5;
+		Player player1;
+		player1.SetName("Player1");
+		player1.SetColor(Player::Color::Blue);
+		Player player2;
+		player2.SetName("Player2");
+		player2.SetColor(Player::Color::Green);
+	}
+	else
+	{
+		if (PlayersNumber==3)
+		{
+			rounds = 4;
+			Player player1;
+			player1.SetName("Player1");
+			player1.SetColor(Player::Color::Blue);
+			Player player2;
+			player2.SetName("Player2");
+			player2.SetColor(Player::Color::Green);
+			Player player3;
+			player3.SetName("Player3");
+			player3.SetColor(Player::Color::Red);
+		}
+		else
+		{
+			rounds = 4;
+			Player player1;
+			player1.SetName("Player1");
+			player1.SetColor(Player::Color::Blue);
+			Player player2;
+			player2.SetName("Player2");
+			player2.SetColor(Player::Color::Green);
+			Player player3;
+			player3.SetName("Player3");
+			player3.SetColor(Player::Color::Red);
+			Player player4;
+			player4.SetName("Player4");
+			player4.SetColor(Player::Color::Yellow);
+		}
 	}
 }
