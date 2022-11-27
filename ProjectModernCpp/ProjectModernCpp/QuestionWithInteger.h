@@ -7,7 +7,7 @@ class QuestionWithInteger
 public:
 	QuestionWithInteger(std::string question, int answer);
 	~QuestionWithInteger();
-
+	QuestionWithInteger();
 	const int getAnswer() const;
 
     int CheckAnswer(int answer);

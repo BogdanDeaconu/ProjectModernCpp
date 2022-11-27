@@ -21,6 +21,8 @@ public:
 	void SelectBaseCoordinates(Board::Position pos, Territory& territory, const Player& player);
 
 	void Duel(Player& player1, Player& player2);
+
+	void DeterminePlayersTurnOrder(std::vector<Player>&Players);
 	
 	void StartGame(int PlayersNumber);
 private:

@@ -7,6 +7,10 @@ QuestionWithInteger::QuestionWithInteger(std::string question, int answer)
 QuestionWithInteger::~QuestionWithInteger()
 {  }
 
+QuestionWithInteger::QuestionWithInteger()
+{
+}
+
 const int QuestionWithInteger::getAnswer() const
 {
 	return m_answer;

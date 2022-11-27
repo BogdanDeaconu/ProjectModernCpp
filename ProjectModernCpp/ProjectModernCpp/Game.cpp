@@ -1,4 +1,5 @@
-#include "Game.h"
+﻿#include "Game.h"
+#include"QuestionWithInteger.h"
 #include"Player.h"
 #include <boost/regex/v4/iterator_category.hpp>
 #include <boost/regex/v5/iterator_category.hpp>
@@ -88,6 +89,29 @@ void Game::Duel(Player& player1, Player& player2)
 	}
 }
 
+void Game::DeterminePlayersTurnOrder(std::vector<Player>& Players)
+{
+	QuestionWithInteger question("În ce an s-a născut Regele Mihai I?",1921);
+	std::vector<int>answers;
+	int answer;
+	for (int i = 0; i < Players.size(); i++)
+	{
+		std::cin >> answer;
+		answers.push_back(answer);
+	}
+	for (int i = 0; i < Players.size()-1; i++)
+	{
+		for (int j = 0; j < Players.size(); j++)
+		{
+			if (question.CheckAnswer(answers[i])>question.CheckAnswer(answers[j]))
+			{
+				std::swap(answers[i], answers[j]);
+				//std::swap(Players[i], Players[j]);
+			}
+		}
+	}
+}
+
 void Game::StartGame(int PlayersNumber)
 {
 	board.ChooseNumberOfPlayers(PlayersNumber);
@@ -103,6 +127,8 @@ void Game::StartGame(int PlayersNumber)
 		Player player2;
 		player2.SetName("Player2");
 		player2.SetColor(Player::Color::Green);
+		players.push_back(player1);
+		players.push_back(player2);
 	}
 	else
 	{
@@ -118,6 +144,9 @@ void Game::StartGame(int PlayersNumber)
 			Player player3;
 			player3.SetName("Player3");
 			player3.SetColor(Player::Color::Red);
+			players.push_back(player1);
+			players.push_back(player2);
+			players.push_back(player3);
 		}
 		else
 		{
@@ -134,6 +163,11 @@ void Game::StartGame(int PlayersNumber)
 			Player player4;
 			player4.SetName("Player4");
 			player4.SetColor(Player::Color::Yellow);
+			players.push_back(player1);
+			players.push_back(player2);
+			players.push_back(player3);
+			players.push_back(player4);
 		}
 	}
+	DeterminePlayersTurnOrder(players);
 }
