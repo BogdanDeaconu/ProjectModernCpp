@@ -16,6 +16,13 @@ struct QuestionsWithInteger
 	int answer;
 };
 
+struct QuestionsWithBool
+{
+	int id;
+	std::string question_bool;
+	std::unordered_map<std::string, bool>answers;
+};
+
 
 inline auto createStorage(const std::string& filename)
 {
