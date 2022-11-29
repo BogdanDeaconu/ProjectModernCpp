@@ -25,13 +25,8 @@ bool QuestionWithBool::CheckAnswer(std::string answer)
 	{
 		if (pair.first == answer)
 		{
-			if(pair.second)
-			{
-				return true;
-			}
+			return pair.second;
 		}
-	}
-	return false;
 }
 
 

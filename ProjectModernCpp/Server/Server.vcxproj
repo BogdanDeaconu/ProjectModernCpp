@@ -128,11 +128,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
-    <ClInclude Include="Questions.h" />
+    <ClInclude Include="DataBase.h" />
+    <ClInclude Include="QuestionBool.h" />
+    <ClInclude Include="QuestionInt.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
-    <ClCompile Include="Questions.cpp" />
+    <ClCompile Include="DataBase.cpp" />
+    <ClCompile Include="QuestionBool.cpp" />
+    <ClCompile Include="QuestionInt.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

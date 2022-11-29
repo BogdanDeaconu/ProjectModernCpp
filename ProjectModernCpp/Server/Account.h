@@ -3,37 +3,36 @@
 #include <string>
 #include <vector>
 
-#include <crow.h>
-#include <sqlite_orm/sqlite_orm.h>
-namespace sql = sqlite_orm;
 
 enum class W_L : uint8_t {
-		Win,
-		Lost
-	};
-struct Account {
-	int id;
-	std::string username;
-	std::string password;
-	std::vector<std::pair<W_L, int>> history;
+	Win,
+	Lost
 };
 
-inline auto createAccount(const std::string& filename) {
-	return sql::make_storage(
-		filename,
-		sql::make_table("accounts",
-			sql::make_column("id", &Account::id, sql::autoincrement(), sql::primary_key()),
-			sql::make_column("username", &Account::username),
-			sql::make_column("password", &Account::password),
-			sql::make_column("history", &Account::history)
-		)
-	);
-}
-
-using Accounts = decltype(createAccount(""));
-
-void initAccounts(Accounts& db);
-
-void addAccount(Accounts& db, const Account account);
-
+class Account
+{
+public:
+	Account();
+	~Account();
+	Account(const Account& x);
+	Account(std::string username, std::string password);
+	
+	void SetID(int id);
+	int GetID()const;
+	
+	void SetUserName(std::string userName);
+	std::string GetUsername()const;
+	
+	void SetPassword(std::string password);
+	std::string GetPassword()const;
+	
+	void SetWinLoss(W_L winLoss);
+	std::vector<W_L> GetWinLoss()const;
+	
+private:
+	int m_id;
+	std::string m_userName;
+	std::string m_password;
+	std::vector<W_L> m_winsAndLosses;
+};
 
