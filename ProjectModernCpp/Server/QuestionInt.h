@@ -7,6 +7,7 @@ class QuestionInt
 {
 public:
 	QuestionInt();
+	QuestionInt(int id, std::string question, int answer);
 	~QuestionInt();
 
 	void SetID(int id);

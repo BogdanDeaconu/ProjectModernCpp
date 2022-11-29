@@ -4,6 +4,9 @@ QuestionInt::QuestionInt()
 	:m_id(-1),m_question(""),m_answer()
 { }
 
+QuestionInt::QuestionInt(int id,std::string question, int answer)
+	:m_id(id), m_question(question), m_answer(answer)
+{ }
 QuestionInt::~QuestionInt()
 { }
 
