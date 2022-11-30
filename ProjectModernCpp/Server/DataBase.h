@@ -7,6 +7,7 @@
 #include "QuestionInt.h"
 #include "QuestionBool.h"
 
+
 #include <crow.h>
 #include <sqlite_orm/sqlite_orm.h>
 namespace sql = sqlite_orm;
@@ -20,7 +21,8 @@ inline auto createStorage(const std::string& filename)
 				sql::make_column("A_ID", &Account::GetID, &Account::SetID, sql::autoincrement(), sql::primary_key()),
 				sql::make_column("UserName", &Account::GetUsername, &Account::SetUserName),
 				sql::make_column("Password", &Account::GetPassword, &Account::SetPassword),
-				sql::make_column("WinLoss", &Account::GetWinLoss, &Account::SetWinLoss)),
+				sql::make_column("Wins", &Account::GetWins, &Account::SetWins),
+				sql::make_column("Losses", &Account::GetLosses, &Account::SetLosses)),
 			sql::make_table("QuestionInt",
 				sql::make_column("QI_ID", &QuestionInt::GetID, &QuestionInt::SetID, sql::autoincrement(), sql::primary_key()),
 				sql::make_column("Question", &QuestionInt::GetQuestion, &QuestionInt::SetQuestion),
@@ -28,7 +30,10 @@ inline auto createStorage(const std::string& filename)
 			sql::make_table("QuestionBool",
 				sql::make_column("QB_ID", &QuestionBool::GetID, &QuestionBool::SetID, sql::autoincrement(), sql::primary_key()),
 				sql::make_column("Question", &QuestionBool::GetQuestion, &QuestionBool::SetQuestion),
-				sql::make_column("Answer", &QuestionBool::GetAnswer, &QuestionBool::SetAnswer)
+				sql::make_column("RightAnswer", &QuestionBool::RightGetAnswer, &QuestionBool::SetRightAnswer),
+				sql::make_column("WrongAnswer1", &QuestionBool::WrongGetAnswer1, &QuestionBool::SetWrongAnswer1),
+				sql::make_column("WrongAnswer2", &QuestionBool::WrongGetAnswer2, &QuestionBool::SetWrongAnswer2),
+				sql::make_column("WrongAnswer3", &QuestionBool::WrongGetAnswer3, &QuestionBool::SetWrongAnswer3)
 		));
 }
 
@@ -41,5 +46,6 @@ public:
 	void initializeAccount(Account a);
 	void initializeQuestionInt(QuestionInt a);
 	void initializeQuestionBool(QuestionBool a);
-	void AddQuestions();
+	void AddQuestionsInt();
+	void AddQuestionsBool();
 };

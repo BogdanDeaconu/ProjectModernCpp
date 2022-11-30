@@ -137,6 +137,7 @@
     <ClCompile Include="DataBase.cpp" />
     <ClCompile Include="QuestionBool.cpp" />
     <ClCompile Include="QuestionInt.cpp" />
+    <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

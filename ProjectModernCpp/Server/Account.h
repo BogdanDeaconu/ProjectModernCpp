@@ -4,11 +4,6 @@
 #include <vector>
 
 
-enum class W_L : uint8_t {
-	Win,
-	Lost
-};
-
 class Account
 {
 public:
@@ -26,13 +21,17 @@ public:
 	void SetPassword(std::string password);
 	std::string GetPassword()const;
 	
-	void SetWinLoss(W_L winLoss);
-	std::vector<W_L> GetWinLoss()const;
+	void SetWins(int wins);
+	int GetWins()const;
+	
+	void SetLosses(int losses);
+	int GetLosses()const;
 	
 private:
 	int m_id;
 	std::string m_userName;
 	std::string m_password;
-	std::vector<W_L> m_winsAndLosses;
+	int m_wins;
+	int m_losses;
 };
 
