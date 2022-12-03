@@ -25,7 +25,20 @@ void Client::on_SignUpButton_clicked()
 	);
 }
 
-
+void Client::on_LogInButton_clicked()
+{
+    QString name = ui.UsernameLineEdit->text();
+    QString password = ui.PasswordLineEdit->text();
+    std::string aux = name.toStdString();
+    std::string aux2 = password.toStdString();
+	auto response = cpr::Put(
+		cpr::Url{ "http://localhost:18080/loginaccount" },
+		cpr::Payload{
+			{"username" , aux},
+			{"password" , aux2}
+		}
+	);
+	
 }
 
 
