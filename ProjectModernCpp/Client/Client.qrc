@@ -1,4 +1,9 @@
 <RCC>
-    <qresource prefix="Client">
-    </qresource>
+  <qresource prefix="Client">
+    <file>268-2683321_change-password-svg-png-icon-free-download-password.png</file>
+    <file>png-transparent-computer-icons-user-profile-username-avatar-username-user-profile-thumbnail.png</file>
+    <file>download.png</file>
+    <file>triviador-logo.png</file>
+    <file>png-transparent-triviador-brasil-app-store-conquiztador-culture-Новости-Крыма-others-culture-text-cardboard.png</file>
+  </qresource>
 </RCC>
