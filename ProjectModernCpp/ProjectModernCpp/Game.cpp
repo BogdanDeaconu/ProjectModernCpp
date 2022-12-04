@@ -52,8 +52,9 @@ void Game::ReadBoolQ(std::vector<QuestionWithBool*>& Boolquestions)
 	}
 }
 
-void Game::SelectBaseCoordinates(Board::Position pos, Territory& territory, const Player& player)
+void Game::SelectBaseCoordinates(Board::Position pos, const Player& player)
 {
+	Territory territory;
 	territory.ConquerTerritory(player.GetColor());
 	territory.SetTerritoryScore(300);
 	board[pos] = territory;
@@ -114,6 +115,7 @@ void Game::DeterminePlayersTurnOrder(std::vector<Player>& Players)
 
 void Game::StartGame(int PlayersNumber)
 {
+	Game game;
 	board.ChooseNumberOfPlayers(PlayersNumber);
 	board.SetBoardDimensions();
 	uint8_t rounds;
@@ -170,4 +172,12 @@ void Game::StartGame(int PlayersNumber)
 		}
 	}
 	DeterminePlayersTurnOrder(players);
+	Board::Position pos;
+	for (int i = 0; i < players.size(); i++)
+	{
+		uint8_t line, column;
+		std::cin >> line >> column;
+		pos = {line,column};
+		game.SelectBaseCoordinates(pos, players[i]);
+	}
 }

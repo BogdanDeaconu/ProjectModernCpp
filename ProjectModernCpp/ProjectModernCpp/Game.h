@@ -18,11 +18,12 @@ public:
 	void ReadIntQ(std::vector <QuestionWithInteger *>& Intquestions);
 	void ReadBoolQ(std::vector <QuestionWithBool*>& Boolquestions);
 	
-	void SelectBaseCoordinates(Board::Position pos, Territory& territory, const Player& player);
+	void SelectBaseCoordinates(Board::Position pos, const Player& player);
 
 	void Duel(Player& player1, Player& player2);
 
 	void DeterminePlayersTurnOrder(std::vector<Player>&Players);
+
 	
 	void StartGame(int PlayersNumber);
 private:

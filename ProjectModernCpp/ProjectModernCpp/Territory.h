@@ -17,6 +17,7 @@ public:
 public:
 	
 	Territory(const uint16_t score, Color color);
+	Territory();
 	Territory GetTerritory(const Territory& territory);
 	Color GetColor() const;
 	void ConquerTerritory(Player::Color color);

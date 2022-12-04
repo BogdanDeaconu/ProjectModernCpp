@@ -8,6 +8,10 @@ Territory::Territory(const uint16_t score, Color color) :
 
 }
 
+Territory::Territory()
+{
+}
+
 Territory Territory::GetTerritory(const Territory& territory)
 {
 	return territory;
