@@ -181,12 +181,23 @@ void Game::StartGame(int PlayersNumber)
 	}
 	DeterminePlayersTurnOrder(players);
 	Board::Position pos;
+	uint8_t line, column;
 	for (int i = 0; i < players.size(); i++)
 	{
-		uint8_t line, column;
 		std::cin >> line >> column;
 		pos = {line,column};
 		game.SelectBaseCoordinates(pos, players[i]);
 	}
-
+	uint8_t NumberOfPlayers = board.GetNumberOfPlayers();
+	for (int i = 0; i < players.size(); i++)
+	{
+		uint8_t TerrrytoryCount = NumberOfPlayers - (i+1);
+		while (TerrrytoryCount)
+		{
+			std::cin >> line >> column;
+			pos = { line,column };
+			game.DistributeTerritory(pos, players[i]);
+			TerrrytoryCount--;
+		}
+	}
 }
