@@ -24,6 +24,7 @@ public:
 
 	void DeterminePlayersTurnOrder(std::vector<Player>&Players);
 
+	void DistributeTerritory(Board::Position pos, const Player& player);
 	
 	void StartGame(int PlayersNumber);
 private:

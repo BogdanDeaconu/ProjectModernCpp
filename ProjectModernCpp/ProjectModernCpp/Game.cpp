@@ -113,6 +113,14 @@ void Game::DeterminePlayersTurnOrder(std::vector<Player>& Players)
 	}
 }
 
+void Game::DistributeTerritory(Board::Position pos, const Player& player)
+{
+	Territory territory;
+	territory.ConquerTerritory(player.GetColor());
+	territory.SetTerritoryScore(100);
+	board[pos] = territory;
+}
+
 void Game::StartGame(int PlayersNumber)
 {
 	Game game;
@@ -180,4 +188,5 @@ void Game::StartGame(int PlayersNumber)
 		pos = {line,column};
 		game.SelectBaseCoordinates(pos, players[i]);
 	}
+
 }
