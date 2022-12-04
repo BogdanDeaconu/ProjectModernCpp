@@ -68,24 +68,24 @@ void Game::Duel(Player& player1, Player& player2)
 	int answer1 = player1.PlayerAnswer();
 	int answer2 = player2.PlayerAnswer();
 	if (question->CheckAnswer(answer1) == 0 and question->CheckAnswer(answer2) = 0) {
-		//player1 +100
-		//player2 -100
+		player1.WinDuel();
+		player2.LoseDuel();
 	}
 	if (question->CheckAnswer(answer1) != 0 and question->CheckAnswer(answer2) == 0) {
-			//player1 -100
-			//player2 +100
+		player1.LoseDuel();
+		player2.WinDuel();
 	}
 	if (question->CheckAnswer(answer1) == 0 and question->CheckAnswer(answer1) == 0) {
 			//functie comparare timp cu time.h
 	}
 	if (question->CheckAnswer(answer1) != 0 and question->CheckAnswer(answer1) != 0) {
 		if (question->CheckAnswer(answer1) > question->CheckAnswer(answer2)) {
-				//player1 +100
-				//player2 -100
+			player1.WinDuel();
+			player2.LoseDuel();
 		}
 		else {
-				//player1 -100
-				//player2 +100
+			player1.LoseDuel();
+			player2.WinDuel();
 		}
 	}
 }
@@ -134,9 +134,13 @@ void Game::StartGame(int PlayersNumber)
 		Player player1;
 		player1.SetName("Player1");
 		player1.SetColor(Player::Color::Blue);
+		player1.SetScore(0);
+		player1.SetStatus(Player::Status::Activ);
 		Player player2;
 		player2.SetName("Player2");
 		player2.SetColor(Player::Color::Green);
+		player2.SetScore(0);
+		player2.SetStatus(Player::Status::Activ);
 		players.push_back(player1);
 		players.push_back(player2);
 	}
@@ -148,12 +152,18 @@ void Game::StartGame(int PlayersNumber)
 			Player player1;
 			player1.SetName("Player1");
 			player1.SetColor(Player::Color::Blue);
+			player1.SetScore(0);
+			player1.SetStatus(Player::Status::Activ);
 			Player player2;
 			player2.SetName("Player2");
 			player2.SetColor(Player::Color::Green);
+			player2.SetScore(0);
+			player2.SetStatus(Player::Status::Activ);
 			Player player3;
 			player3.SetName("Player3");
 			player3.SetColor(Player::Color::Red);
+			player3.SetScore(0);
+			player3.SetStatus(Player::Status::Activ);
 			players.push_back(player1);
 			players.push_back(player2);
 			players.push_back(player3);
@@ -164,15 +174,23 @@ void Game::StartGame(int PlayersNumber)
 			Player player1;
 			player1.SetName("Player1");
 			player1.SetColor(Player::Color::Blue);
+			player1.SetScore(0);
+			player1.SetStatus(Player::Status::Activ);
 			Player player2;
 			player2.SetName("Player2");
 			player2.SetColor(Player::Color::Green);
+			player2.SetScore(0);
+			player2.SetStatus(Player::Status::Activ);
 			Player player3;
 			player3.SetName("Player3");
 			player3.SetColor(Player::Color::Red);
+			player3.SetScore(0);
+			player3.SetStatus(Player::Status::Activ);
 			Player player4;
 			player4.SetName("Player4");
 			player4.SetColor(Player::Color::Yellow);
+			player4.SetScore(0);
+			player4.SetStatus(Player::Status::Activ);
 			players.push_back(player1);
 			players.push_back(player2);
 			players.push_back(player3);
