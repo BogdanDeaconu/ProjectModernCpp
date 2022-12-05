@@ -22,6 +22,7 @@ int main(){
 			if (bazaDeDate.m_db.get_all<Account>(sql::where(sql::like(&Account::GetUsername, username))).size() == 0)
 			{
 				bazaDeDate.initializeAccount(user);
+				
 				return crow::response(200);
 			}
 			else
