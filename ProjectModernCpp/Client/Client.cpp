@@ -14,26 +14,27 @@ void Client::on_SignUpButton_clicked()
 {
 	QString name = ui.UsernameLineEdit->text();
 	QString password = ui.PasswordLineEdit->text();
-	std::string aux = name.toStdString();
-	std::string aux2 = password.toStdString();
-    auto response = cpr::Put(
+	std::string aux = name.toUtf8().constData();
+	std::string aux2 = password.toUtf8().constData();
+    auto response  = cpr::Put(
         cpr::Url{ "http://localhost:18080/signupaccount" },
-        cpr::Payload{
+		cpr::Parameters{
 			{"username" , aux},
 			{"password" , aux2}
         }
 	);
+	QDebug(QtMsgType::QtInfoMsg) << response.text.c_str();
 }
 
 void Client::on_LogInButton_clicked()
 {
     QString name = ui.UsernameLineEdit->text();
     QString password = ui.PasswordLineEdit->text();
-    std::string aux = name.toStdString();
-    std::string aux2 = password.toStdString();
+	std::string aux = name.toUtf8().constData();
+	std::string aux2 = password.toUtf8().constData();
 	auto response = cpr::Put(
 		cpr::Url{ "http://localhost:18080/loginaccount" },
-		cpr::Payload{
+		cpr::Parameters{
 			{"username" , aux},
 			{"password" , aux2}
 		}

@@ -22,9 +22,9 @@ private:
 
 
 private slots:
-	void on_SignUpButton_released();
+
 	void on_SignUpButton_clicked();
 
-	void on_LogInButton_released();
+	
 	void on_LogInButton_clicked();
 };

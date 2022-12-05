@@ -29,14 +29,14 @@ void DataBase::AddQuestionsInt()
 	std::string Line;
 	InFile.open("C://Users//Bogdan//Documents//QuestionsInt.csv");
 	std::getline(InFile, Line);
+	int id = 1;
 	while (std::getline(InFile, Line))
 	{
 		QuestionInt questionToRead;
 		std::stringstream ss(Line);
 		std::string substr, substr2;
-		std::getline(ss, substr, ',');
-		questionToRead.SetID(std::stoi(substr));
-		substr = "";
+		questionToRead.SetID(id);
+		id++;
 		std::getline(ss, substr, ',');
 		questionToRead.SetQuestion(substr);
 		substr = "";
@@ -49,20 +49,20 @@ void DataBase::AddQuestionsInt()
 
 void DataBase::AddQuestionsBool()
 {
-	std::ifstream InFile;
+	std::ifstream InFile2;
 	std::vector<QuestionBool> QuestionsBool;
 	int verifier = 0;
 	std::string Line;
-	InFile.open("C://Users//Bogdan//Documents//QuestionsBool.csv");
-	std::getline(InFile, Line);
-	while (std::getline(InFile, Line))
+	InFile2.open("C://Users//Bogdan//Documents//QuestionsBool.csv");
+	std::getline(InFile2, Line);
+	int id = 1;
+	while (std::getline(InFile2, Line))
 	{
 		QuestionBool questionToRead;
 		std::stringstream ss(Line);
 		std::string substr, substr2;
-		std::getline(ss, substr, ',');
-		questionToRead.SetID(std::stoi(substr));
-		substr = "";
+		questionToRead.SetID(id);
+		id++;
 		std::getline(ss, substr, ',');
 		questionToRead.SetQuestion(substr);
 		substr = "";

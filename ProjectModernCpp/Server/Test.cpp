@@ -3,9 +3,8 @@
 int main(){
 
 		DataBase db;
-		db.AddQuestionsBool();
-		db.AddQuestionsInt();
-		return 0;
+		//db.AddQuestionsBool();
+		//db.AddQuestionsInt();
 
 		crow::SimpleApp app;
 		
@@ -19,10 +18,9 @@ int main(){
 			std::string password = x["password"].s();
 			DataBase bazaDeDate;
 			Account user(username, password);
-			if (bazaDeDate.m_db.get_all<Account>(sql::where(sql::like(&Account::GetUsername, username))).size() == 0)
+			if (bazaDeDate.m_db.get_all<Account>(sql::where(sql::like(&Account::GetUsername, username))).size() != 0)
 			{
 				bazaDeDate.initializeAccount(user);
-				
 				return crow::response(200);
 			}
 			else
@@ -50,4 +48,10 @@ int main(){
 				return crow::response(200);
 			}
 			});
+
+		app.port(18080).multithreaded().run();
+
+
+		return 0;
+		
 }
