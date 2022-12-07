@@ -10,14 +10,21 @@ Territory::Territory()
 {
 }
 
-Territory Territory::GetTerritory(const Territory& territory)
+
+
+void Territory::SetTerritoryColor(Color color)
 {
-	return territory;
+	m_color = color;
 }
 
-Territory::Color Territory::GetColor() const
+Color Territory::GetColor() const
 {
 	return m_color;
+}
+
+uint32_t Territory::GetScore() const
+{
+	return m_score;
 }
 
 void Territory::SetTerritoryScore(uint32_t n)

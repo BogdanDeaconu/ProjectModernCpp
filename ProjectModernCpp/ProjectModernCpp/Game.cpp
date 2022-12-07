@@ -106,12 +106,17 @@ void Game::DeterminePlayersTurnOrder()
 	}
 }
 
-void Game::DistributeTerritory(Board::Position pos,int i)
+void Game::ConquerTerritory(Board::Position pos, int order)
 {
-	Territory territory;
-	territory.ConquerTerritory(m_players[i].GetColor());
-	territory.SetTerritoryScore(100);
-	m_board[pos] = territory;
+	
+	 m_board[pos].SetTerritoryColor(m_players[order].GetColor());
+	
+}
+
+void Game::DistributeTerritory(Board::Position pos,int order)
+{
+	ConquerTerritory(pos,order);
+	m_board[pos].SetTerritoryScore(100);
 }
 
 void Game::StartGame(int PlayersNumber)
@@ -125,12 +130,12 @@ void Game::StartGame(int PlayersNumber)
 		rounds = 5;
 		Player player1;
 		player1.SetName("Player1");
-		player1.SetColor(Player::Color::Blue);
+		player1.SetColor(Color::Blue);
 		player1.SetScore(0);
 		player1.SetStatus(Player::Status::Activ);
 		Player player2;
 		player2.SetName("Player2");
-		player2.SetColor(Player::Color::Green);
+		player2.SetColor(Color::Green);
 		player2.SetScore(0);
 		player2.SetStatus(Player::Status::Activ);
 		m_players.push_back(player1);
@@ -143,17 +148,17 @@ void Game::StartGame(int PlayersNumber)
 			rounds = 4;
 			Player player1;
 			player1.SetName("Player1");
-			player1.SetColor(Player::Color::Blue);
+			player1.SetColor(Color::Blue);
 			player1.SetScore(0);
 			player1.SetStatus(Player::Status::Activ);
 			Player player2;
 			player2.SetName("Player2");
-			player2.SetColor(Player::Color::Green);
+			player2.SetColor(Color::Green);
 			player2.SetScore(0);
 			player2.SetStatus(Player::Status::Activ);
 			Player player3;
 			player3.SetName("Player3");
-			player3.SetColor(Player::Color::Red);
+			player3.SetColor(Color::Red);
 			player3.SetScore(0);
 			player3.SetStatus(Player::Status::Activ);
 			m_players.push_back(player1);
@@ -165,22 +170,22 @@ void Game::StartGame(int PlayersNumber)
 			rounds = 4;
 			Player player1;
 			player1.SetName("Player1");
-			player1.SetColor(Player::Color::Blue);
+			player1.SetColor(Color::Blue);
 			player1.SetScore(0);
 			player1.SetStatus(Player::Status::Activ);
 			Player player2;
 			player2.SetName("Player2");
-			player2.SetColor(Player::Color::Green);
+			player2.SetColor(Color::Green);
 			player2.SetScore(0);
 			player2.SetStatus(Player::Status::Activ);
 			Player player3;
 			player3.SetName("Player3");
-			player3.SetColor(Player::Color::Red);
+			player3.SetColor(Color::Red);
 			player3.SetScore(0);
 			player3.SetStatus(Player::Status::Activ);
 			Player player4;
 			player4.SetName("Player4");
-			player4.SetColor(Player::Color::Yellow);
+			player4.SetColor(Color::Yellow);
 			player4.SetScore(0);
 			player4.SetStatus(Player::Status::Activ);
 			m_players.push_back(player1);

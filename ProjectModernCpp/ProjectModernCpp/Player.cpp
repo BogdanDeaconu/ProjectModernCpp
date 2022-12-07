@@ -33,7 +33,7 @@ Player::Player() :
 {
 }
 
-Player::Color Player::GetColor() const
+Color Player::GetColor() const
 {
 	return m_color;
 }
@@ -48,7 +48,7 @@ std::string Player::GetName() const
 	return m_name;
 }
 
-void Player::SetColor(const Player::Color& color)
+void Player::SetColor(const Color& color)
 {
 	m_color = color;
 }

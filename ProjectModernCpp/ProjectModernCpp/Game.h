@@ -7,7 +7,7 @@
 #include "QuestionWithInteger.h"
 #include"Board.h"
 #include"Player.h"
-class Game :         
+class Game  
 {
 
 public:
@@ -22,8 +22,8 @@ public:
 	void Duel(int order1, int order2);
 
 	void DeterminePlayersTurnOrder();
-
-	void DistributeTerritory(Board::Position pos,int i);
+	void ConquerTerritory(Board::Position pos, int order);
+	void DistributeTerritory(Board::Position pos,int order);
 	
 	
 	void StartGame(int PlayersNumber);

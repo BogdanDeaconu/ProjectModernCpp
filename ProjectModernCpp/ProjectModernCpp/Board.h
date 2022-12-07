@@ -5,6 +5,7 @@
 #include<cstdint>
 #include<array>
 #include"Territory.h"
+
 class Board
 {
 public:
@@ -12,16 +13,16 @@ public:
 
 public:
 	//getter
-	const std::optional<Territory>& operator[](Position pos) const;
+	const Territory& operator[](Position pos) const;
 	//setter
-	std::optional<Territory>& operator[](Position  pos);
+	Territory& operator[](Position  pos);
 	
 	friend std::ostream& operator<<(std::ostream& out, const Board& board);
 	
 	void ChooseNumberOfPlayers(int n);
 	int GetNumberOfPlayers();
 	void SetBoardDimensions();
-
+	
 
 
 private:
@@ -30,6 +31,6 @@ private:
 	static std::size_t m_size;
 	static int NumberOfPlayers;	
 private:
-	std::vector<std::optional<Territory>>m_board;
+	std::vector<Territory>m_board;
 };
 

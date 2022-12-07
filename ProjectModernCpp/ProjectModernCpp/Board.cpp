@@ -8,9 +8,9 @@ std::ostream& operator<<(std::ostream& out, const Board& board)
 	{
 		for (column = 0; column < Board::m_width; column++)
 		{
-			if (board[pos])
+			if (board[pos].GetColor()!=Color::Grey)
 			{
-				out << *board[pos];
+				out << board[pos];
 			}
 			else
 			{
@@ -23,13 +23,13 @@ std::ostream& operator<<(std::ostream& out, const Board& board)
 	return out;
 }
 
-const std::optional<Territory>& Board::operator[](Position pos) const
+const Territory& Board::operator[](Position pos) const
 {
 	const auto& [line, column] = pos;
 	return m_board[line * m_width + column];
 }
 
-std::optional<Territory>& Board::operator[](Position pos)
+Territory& Board::operator[](Position pos)
 {
 	const auto& [line, column] = pos;
 	return m_board[line * m_width + column];
@@ -69,6 +69,8 @@ void Board::SetBoardDimensions()
 	static const std::size_t size = m_height * m_width;
 	m_size = size;
 }
+
+
 
 
 

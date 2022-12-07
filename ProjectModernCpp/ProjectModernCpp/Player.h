@@ -1,17 +1,11 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "Colors.h"
 
 class Player
 {
-public:
-	enum class Color : uint8_t
-	{
-		Blue,
-		Red,
-		Yellow,
-		Green
-	};
+
 public:
 	enum class Status :uint8_t
 	{
@@ -26,7 +20,7 @@ public:
 	friend std::ostream& operator <<(std::ostream& os, const Player& player);
 	void SetName(const std::string& name);
 	std::string GetName() const;
-	void SetColor(const Player::Color& color);
+	void SetColor(const Color& color);
 	Color GetColor() const;
 	void SetScore(const uint32_t& score);
 	uint32_t GetScore() const;
