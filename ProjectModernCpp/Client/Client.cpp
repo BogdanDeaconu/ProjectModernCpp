@@ -1,5 +1,5 @@
 #include "Client.h"
-#include "../Server/DataBase.h"
+
 
 Client::Client(QWidget *parent)
     : QMainWindow(parent)
@@ -16,14 +16,13 @@ void Client::on_SignUpButton_clicked()
 	QString password = ui.PasswordLineEdit->text();
 	std::string aux = name.toUtf8().constData();
 	std::string aux2 = password.toUtf8().constData();
-    auto response  = cpr::Put(
-        cpr::Url{ "http://localhost:18080/signupaccount" },
+	auto response = cpr::Put(
+		cpr::Url{ "http://localhost:18080/signupaccount" },
 		cpr::Parameters{
-			{"username" , aux},
-			{"password" , aux2}
-        }
+			{"username", aux},
+		    {"password", aux2}
+		}
 	);
-	QDebug(QtMsgType::QtInfoMsg) << response.text.c_str();
 }
 
 void Client::on_LogInButton_clicked()
@@ -34,7 +33,7 @@ void Client::on_LogInButton_clicked()
 	std::string aux2 = password.toUtf8().constData();
 	auto response = cpr::Put(
 		cpr::Url{ "http://localhost:18080/loginaccount" },
-		cpr::Parameters{
+		cpr::Payload{
 			{"username" , aux},
 			{"password" , aux2}
 		}

@@ -25,7 +25,6 @@ public:
 
 	void DistributeTerritory(Board::Position pos,int i);
 	
-	
 	void StartGame(int PlayersNumber);
 private:
 	static const std::size_t numberOfBoolQ = 70;

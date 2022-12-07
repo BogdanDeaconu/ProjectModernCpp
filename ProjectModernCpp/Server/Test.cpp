@@ -8,40 +8,40 @@ int main(){
 
 		crow::SimpleApp app;
 		
-		CROW_ROUTE(app, "/signupaccount")
+		CROW_ROUTE(app, "/signupaccount/<string>/<string>")
 			.methods("PUT"_method)
-			([](const crow::request& req) {
+			([&db](const crow::request& req) {
 			auto x = crow::json::load(req.body);
-			if (!x)
+			if (!x) {
 				return crow::response(400);
+			}
 			std::string username = x["username"].s();
 			std::string password = x["password"].s();
-			DataBase bazaDeDate;
-			Account user(username, password);
-			if (bazaDeDate.m_db.get_all<Account>(sql::where(sql::like(&Account::GetUsername, username))).size() != 0)
+			Account user(username,password);
+			if (db.m_db.get_all<Account>(sql::where(sql::like(&Account::GetUsername, username))).size() == 0)
 			{
-				bazaDeDate.initializeAccount(user);
+				db.initializeAccount(user);
 				return crow::response(200);
 			}
 			else
 			{
-				return crow::response(400);
+				return crow::response(401);
 			}
 			});
 			
 		CROW_ROUTE(app, "/loginaccount")
 			.methods("PUT"_method)
-			([](const crow::request& req) {
+			([&db](const crow::request& req) {
 			auto x = crow::json::load(req.body);
-			if (!x)
+			if (!x) {
 				return crow::response(400);
+			}
 			std::string username = x["username"].s();
 			std::string password = x["password"].s();
-			DataBase bazaDeDate;
 			Account user(username, password);
-			if (bazaDeDate.m_db.get_all<Account>(sql::where(sql::like(&Account::GetUsername, username))).size() == 0)
+			if (db.m_db.get_all<Account>(sql::where(sql::like(&Account::GetUsername, username))).size() == 0)
 			{
-				return crow::response(400);
+				return crow::response(401);
 			}
 			else
 			{

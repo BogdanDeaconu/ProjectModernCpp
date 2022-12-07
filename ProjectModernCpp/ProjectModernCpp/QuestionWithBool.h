@@ -14,7 +14,7 @@ public:
 	
 	bool CheckAnswer(std::string answer);
 	
-	friend std::ostream& operator<<(std::ostream& os, const QuestionWithBool & question);
+	friend std::ostream& operator << (std::ostream& os, const QuestionWithBool& question);
 private:
 	std::string m_question;
 	const std::unordered_map<std::string, bool> m_answers;

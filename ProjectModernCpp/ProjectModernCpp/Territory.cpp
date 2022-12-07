@@ -2,11 +2,9 @@
 
 
 Territory::Territory(const uint16_t score, Color color) :
-	m_score(score),
+    m_score(score),
 	m_color(color)
-{
-
-}
+{ }
 
 Territory::Territory()
 {
@@ -20,11 +18,6 @@ Territory Territory::GetTerritory(const Territory& territory)
 Territory::Color Territory::GetColor() const
 {
 	return m_color;
-}
-
-void Territory::ConquerTerritory(Player::Color color)
-{
-	m_color = static_cast<Territory::Color>(color);
 }
 
 void Territory::SetTerritoryScore(uint32_t n)

@@ -1,9 +1,6 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "Territory.h"
-#include "Board.h"
-#include "Game.h"
 
 class Player
 {

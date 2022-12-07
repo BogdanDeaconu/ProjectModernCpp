@@ -1,5 +1,5 @@
 #include "Player.h"
-#include "Territory.h"
+
 
 
 Player& Player::operator=(const Player& player)
@@ -90,12 +90,6 @@ void Player::LoseDuel()
 	m_score = m_score - 100;
 }
 
-void Player::setBase(Board::Position pos, Territory& base, const Player& player)
-{
-	base.ConquerTerritory(player.GetColor());
-	base.SetTerritoryScore(300);
-	//board[pos] = base;
-}
 
 
 
