@@ -143,11 +143,21 @@ void Game::StartGame(int PlayersNumber)
 	{
 		rounds = 5;
 		Player player1;
+	    std:: array<uint8_t, 3>Player1Advantages;
+		for (int i = 0; i < Player1Advantages.size(); i++)
+		{
+			Player1Advantages[i] = 1;
+		}
 		player1.SetName("Player1");
 		player1.SetColor(Color::Blue);
 		player1.SetScore(0);
 		player1.SetStatus(Player::Status::Activ);
 		Player player2;
+		std::array<uint8_t, 3>Player2Advantages;
+		for (int i = 0; i < Player2Advantages.size(); i++)
+		{
+			Player2Advantages[i] = 1;
+		}
 		player2.SetName("Player2");
 		player2.SetColor(Color::Green);
 		player2.SetScore(0);
@@ -161,16 +171,31 @@ void Game::StartGame(int PlayersNumber)
 		{
 			rounds = 4;
 			Player player1;
+			std::array<uint8_t, 3>Player1Advantages;
+			for (int i = 0; i < Player1Advantages.size(); i++)
+			{
+				Player1Advantages[i] = 1;
+			}
 			player1.SetName("Player1");
 			player1.SetColor(Color::Blue);
 			player1.SetScore(0);
 			player1.SetStatus(Player::Status::Activ);
 			Player player2;
+			std::array<uint8_t, 3>Player2Advantages;
+			for (int i = 0; i < Player2Advantages.size(); i++)
+			{
+				Player2Advantages[i] = 1;
+			}
 			player2.SetName("Player2");
 			player2.SetColor(Color::Green);
 			player2.SetScore(0);
 			player2.SetStatus(Player::Status::Activ);
 			Player player3;
+			std::array<uint8_t, 3>Player3Advantages;
+			for (int i = 0; i < Player3Advantages.size(); i++)
+			{
+				Player3Advantages[i] = 1;
+			}
 			player3.SetName("Player3");
 			player3.SetColor(Color::Red);
 			player3.SetScore(0);
@@ -182,22 +207,42 @@ void Game::StartGame(int PlayersNumber)
 		else
 		{
 			rounds = 4;
-			Player player1;
+			Player player1;		
+			std::array<uint8_t, 3>Player1Advantages; 
+			for (int i = 0; i < Player1Advantages.size(); i++)
+			{
+				Player1Advantages[i] = 1;
+			}
 			player1.SetName("Player1");
 			player1.SetColor(Color::Blue);
 			player1.SetScore(0);
 			player1.SetStatus(Player::Status::Activ);
 			Player player2;
+			std::array<uint8_t, 3>Player2Advantages;
+			for (int i = 0; i < Player2Advantages.size(); i++)
+			{
+				Player2Advantages[i] = 1;
+			}
 			player2.SetName("Player2");
 			player2.SetColor(Color::Green);
 			player2.SetScore(0);
 			player2.SetStatus(Player::Status::Activ);
 			Player player3;
+			std::array<uint8_t, 3>Player3Advantages;
+			for (int i = 0; i < Player3Advantages.size(); i++)
+			{
+				Player3Advantages[i] = 1;
+			}
 			player3.SetName("Player3");
 			player3.SetColor(Color::Red);
 			player3.SetScore(0);
 			player3.SetStatus(Player::Status::Activ);
 			Player player4;
+			std::array<uint8_t, 3>Player4Advantages;
+			for (int i = 0; i < Player4Advantages.size(); i++)
+			{
+				Player4Advantages[i] = 1;
+			}
 			player4.SetName("Player4");
 			player4.SetColor(Color::Yellow);
 			player4.SetScore(0);
