@@ -1,4 +1,5 @@
 #include "Client.h"
+#include "Meniu.h"
 
 
 Client::Client(QWidget *parent)
@@ -18,11 +19,18 @@ void Client::on_SignUpButton_clicked()
 	std::string aux2 = password.toUtf8().constData();
 	auto response = cpr::Put(
 		cpr::Url{ "http://localhost:18080/signupaccount" },
-		cpr::Parameters{
+		cpr::Payload{
 			{"username", aux},
 		    {"password", aux2}
 		}
 	);
+	if (response.status_code == 200) {
+		Meniu m;
+		m.show();
+	}
+	else {
+		QMessageBox::information(this, "Error", "Account already exists");
+	}
 }
 
 void Client::on_LogInButton_clicked()
@@ -31,14 +39,19 @@ void Client::on_LogInButton_clicked()
     QString password = ui.PasswordLineEdit->text();
 	std::string aux = name.toUtf8().constData();
 	std::string aux2 = password.toUtf8().constData();
-	auto response = cpr::Put(
+	auto response = cpr::Post(
 		cpr::Url{ "http://localhost:18080/loginaccount" },
 		cpr::Payload{
 			{"username" , aux},
 			{"password" , aux2}
 		}
 	);
-	
+	if (response.status_code == 200) {
+		QMessageBox::information(this, "Success", "Account logged in");
+	}
+	else {
+		QMessageBox::information(this, "Error", "Account not found OR wrong password");
+	}
 }
 
 

@@ -29,6 +29,7 @@ bool QuestionWithBool::CheckAnswer(std::string answer)
 		{
 			return pair.second;
 		}
+	}
 }
 
 std::ostream& operator << (std::ostream & os, const QuestionWithBool & question)

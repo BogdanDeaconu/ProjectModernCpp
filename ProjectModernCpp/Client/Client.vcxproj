@@ -85,11 +85,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Meniu.cpp" />
     <QtRcc Include="Client.qrc" />
     <QtUic Include="Client.ui" />
     <QtMoc Include="Client.h" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="main.cpp" />
+    <QtUic Include="Meniu.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Meniu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

@@ -4,6 +4,7 @@
 #include <qmessagebox.h>
 #include <qstring.h>
 #include "ui_Client.h"
+#include "Meniu.h"
 
 #include <cpr/cpr.h>
 #include <crow.h>

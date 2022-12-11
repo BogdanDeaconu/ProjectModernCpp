@@ -1,6 +1,4 @@
 ﻿#include "Game.h"
-#include"QuestionWithInteger.h"
-#include"Player.h"
 #include <boost/regex/v4/iterator_category.hpp>
 #include <boost/regex/v5/iterator_category.hpp>
 

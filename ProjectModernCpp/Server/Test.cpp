@@ -1,4 +1,5 @@
 #include "DataBase.h"
+#include "utils.h"
 
 int main(){
 
@@ -8,49 +9,50 @@ int main(){
 
 		crow::SimpleApp app;
 		
-		CROW_ROUTE(app, "/signupaccount/<string>/<string>")
+		CROW_ROUTE(app, "/signupaccount")
 			.methods("PUT"_method)
 			([&db](const crow::request& req) {
-			auto x = crow::json::load(req.body);
-			if (!x) {
-				return crow::response(400);
-			}
-			std::string username = x["username"].s();
-			std::string password = x["password"].s();
-			Account user(username,password);
-			if (db.m_db.get_all<Account>(sql::where(sql::like(&Account::GetUsername, username))).size() == 0)
-			{
-				db.initializeAccount(user);
-				return crow::response(200);
-			}
-			else
-			{
-				return crow::response(401);
+			auto x = parseUrlArgs(req.body);
+			auto username = x["username"];
+			auto password = x["password"];
+			Account account(username,password);
+			for (auto& user : db.m_db.iterate<Account>()) {
+				if (user.GetUsername() == username) {
+					return crow::response(400);
+				}
+				else {
+					db.initializeAccount(account);
+					return crow::response(200);
+				}
 			}
 			});
 			
 		CROW_ROUTE(app, "/loginaccount")
-			.methods("PUT"_method)
+			.methods("POST"_method)
 			([&db](const crow::request& req) {
-			auto x = crow::json::load(req.body);
-			if (!x) {
-				return crow::response(400);
-			}
-			std::string username = x["username"].s();
-			std::string password = x["password"].s();
-			Account user(username, password);
-			if (db.m_db.get_all<Account>(sql::where(sql::like(&Account::GetUsername, username))).size() == 0)
+			auto x = parseUrlArgs(req.body);
+			auto username = x["username"];
+			auto password = x["password"];
+			for (auto& user : db.m_db.iterate<Account>())
 			{
-				return crow::response(401);
-			}
-			else
-			{
-				return crow::response(200);
+				if (user.GetUsername() == username)
+				{
+					if (user.GetPassword() == password)
+					{
+						return crow::response(200);
+					}
+					else
+					{
+						return crow::response(401, "Wrong password");
+					}
+				}
+				else {
+					return crow::response(401, "Account not found");
+				}
 			}
 			});
 
 		app.port(18080).multithreaded().run();
-
 
 		return 0;
 		
