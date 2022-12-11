@@ -119,6 +119,20 @@ void Game::DistributeTerritory(Board::Position pos,int order)
 	m_board[pos].SetTerritoryScore(100);
 }
 
+void Game::ChooseAdvantage(std::vector<int>& Advantage,uint8_t advantage)
+{
+		Board::Position pos;
+		int line, column;
+		std::cin >> line >> column;
+		pos = { line,column };
+		if (m_board[pos].GetScore()>=200 and Advantage[advantage]!=0)
+		{
+			uint32_t new_score;
+			new_score = m_board[pos].GetScore() - 100;
+			Advantage[advantage] = 0;
+		}
+}
+
 void Game::StartGame(int PlayersNumber)
 {
 	Game game;

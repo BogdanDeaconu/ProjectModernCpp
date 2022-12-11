@@ -24,7 +24,7 @@ public:
 	void DeterminePlayersTurnOrder();
 	void ConquerTerritory(Board::Position pos, int order);
 	void DistributeTerritory(Board::Position pos,int order);
-	
+	void ChooseAdvantage(std::vector<int>& Advantage,uint8_t advantage);
 	
 	void StartGame(int PlayersNumber);
 private:
