@@ -292,3 +292,11 @@ void Game::StartGame(int PlayersNumber)
 		}
 	}
 }
+
+bool Game::TerritoryVecin(Board::Position pos1, Board::Position pos2)
+{
+	if (m_board[pos1].GetColor() != m_board[pos2].GetColor())
+		//Verificare daca printre vecinii lui pos1 se afla pos2
+		return true;
+	return false;
+}

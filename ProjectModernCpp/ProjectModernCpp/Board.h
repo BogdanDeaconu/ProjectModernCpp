@@ -1,5 +1,4 @@
 #pragma once
-#include"Player.h"
 #include<vector>
 #include<optional>
 #include<cstdint>
@@ -12,6 +11,7 @@ public:
 	using Position = std::pair<uint8_t, uint8_t>;
 
 public:
+
 	//getter
 	const Territory& operator[](Position pos) const;
 	//setter
@@ -24,13 +24,11 @@ public:
 	void SetBoardDimensions();
 	
 
-
-private:
-	static std::size_t m_height;
-	static std::size_t m_width;
-	static std::size_t m_size;
-	static int NumberOfPlayers;	
 private:
 	std::vector<Territory>m_board;
+	std::size_t m_height;
+	std::size_t m_width;
+	std::size_t m_size;
+	int m_NumberOfPlayers;
 };
 

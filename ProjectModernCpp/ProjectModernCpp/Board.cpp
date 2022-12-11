@@ -4,10 +4,10 @@ std::ostream& operator<<(std::ostream& out, const Board& board)
 {
 	Board::Position pos;
 	auto& [line, column] = pos;
-	for ( line = 0; line < Board::m_height; line++)
+	for ( line = 0; line < board.m_height; line++)
 	{
-		for (column = 0; column < Board::m_width; column++)
-		{
+		for (column = 0; column <board.m_width; column++){
+		
 			if (board[pos].GetColor()!=Color::Grey)
 			{
 				out << board[pos];
@@ -37,17 +37,17 @@ Territory& Board::operator[](Position pos)
 
 void Board::ChooseNumberOfPlayers(int n)
 {
-	NumberOfPlayers = n;
+	m_NumberOfPlayers = n;
 }
 
 int Board::GetNumberOfPlayers()
 {
-	return NumberOfPlayers;
+	return m_NumberOfPlayers;
 }
 
 void Board::SetBoardDimensions()
 {
-	if (NumberOfPlayers == 2)
+	if (m_NumberOfPlayers == 2)
 	{
 		m_height = 3;
 		m_width = 3;
@@ -55,7 +55,7 @@ void Board::SetBoardDimensions()
 	
 	else
 	{
-		if (NumberOfPlayers == 3)
+		if (m_NumberOfPlayers == 3)
 		{
 			m_height = 5;
 			m_width = 3;
@@ -66,8 +66,8 @@ void Board::SetBoardDimensions()
 			m_width = 4;
 		}
 	}
-	static const std::size_t size = m_height * m_width;
-	m_size = size;
+	m_size = m_height * m_width;
+
 }
 
 

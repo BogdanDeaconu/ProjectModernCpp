@@ -2,12 +2,13 @@
 #include<cstdint>
 #include<iostream>
 #include "Colors.h"
+
 class Territory
 {
 
 public:
 	
-	Territory(const uint16_t score, Color color);
+	Territory(const uint32_t score, Color color);
 	Territory();
 	Color GetColor() const;
 	uint32_t GetScore() const;

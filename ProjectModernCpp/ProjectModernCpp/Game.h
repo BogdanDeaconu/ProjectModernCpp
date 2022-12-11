@@ -27,6 +27,7 @@ public:
 	uint8_t ChooseAdvantage(const Player& player,std::array<uint8_t,3>& Advantage);
 	std::unordered_map<std::string, bool> FiftyFiftyAdvantage();
 	void StartGame(int PlayersNumber);
+	bool TerritoryVecin(Board::Position pos1, Board::Position pos2);
 private:
 	static const std::size_t numberOfBoolQ = 70;
 	static const std::size_t number0fIntQ = 30;
