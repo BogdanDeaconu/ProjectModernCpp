@@ -8,7 +8,7 @@ class QuestionWithBool
 public:
 	QuestionWithBool(std::string question, std::unordered_map<std::string, bool> answers);
 	~QuestionWithBool();
-
+	QuestionWithBool();
 	const std::unordered_map<std::string, bool> GetAnswers() const;
 	std::string GetQuestion() const;
 	

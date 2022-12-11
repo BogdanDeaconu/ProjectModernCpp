@@ -24,8 +24,8 @@ public:
 	void DeterminePlayersTurnOrder();
 	void ConquerTerritory(Board::Position pos, int order);
 	void DistributeTerritory(Board::Position pos,int order);
-	void ChooseAdvantage(std::vector<int>& Advantage,uint8_t advantage);
-	
+	uint8_t ChooseAdvantage(const Player& player,std::array<uint8_t,3>& Advantage);
+	std::unordered_map<std::string, bool> FiftyFiftyAdvantage();
 	void StartGame(int PlayersNumber);
 private:
 	static const std::size_t numberOfBoolQ = 70;

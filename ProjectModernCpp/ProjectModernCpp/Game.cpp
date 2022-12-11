@@ -119,18 +119,37 @@ void Game::DistributeTerritory(Board::Position pos,int order)
 	m_board[pos].SetTerritoryScore(100);
 }
 
-void Game::ChooseAdvantage(std::vector<int>& Advantage,uint8_t advantage)
+uint8_t Game::ChooseAdvantage(const Player& player,std::array<uint8_t,3>& Advantage)
 {
 		Board::Position pos;
+		uint8_t advantage;
+		uint8_t unavailable_advantage = 4;
 		int line, column;
 		std::cin >> line >> column;
+		std::cin >> advantage;
 		pos = { line,column };
 		if (m_board[pos].GetScore()>=200 and Advantage[advantage]!=0)
 		{
 			uint32_t new_score;
 			new_score = m_board[pos].GetScore() - 100;
 			Advantage[advantage] = 0;
+			return advantage;
 		}
+		return unavailable_advantage;
+}
+
+std::unordered_map<std::string, bool> Game::FiftyFiftyAdvantage()
+{
+	uint8_t count = 2;
+	std::string corect_answer;
+	std::string answer2;
+	std::string answer3;
+	std::string answer4;
+	std::cin >> corect_answer >> answer2 >> answer3 >> answer4;
+	std::unordered_map<std::string, bool>question({ {corect_answer,0},{answer2,1},{answer3,1},{answer4,1} });
+	question.erase(answer3);
+	question.erase(answer4);
+	return question;
 }
 
 void Game::StartGame(int PlayersNumber)

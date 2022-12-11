@@ -7,6 +7,10 @@ QuestionWithBool::QuestionWithBool(std::string question, std::unordered_map<std:
 QuestionWithBool::~QuestionWithBool()
 {  }
 
+QuestionWithBool::QuestionWithBool()
+{
+}
+
 const std::unordered_map<std::string, bool> QuestionWithBool::GetAnswers() const
 {
 	return m_answers;
