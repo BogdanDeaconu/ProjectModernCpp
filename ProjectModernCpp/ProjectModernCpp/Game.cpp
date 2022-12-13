@@ -104,6 +104,27 @@ void Game::DeterminePlayersTurnOrder()
 	}
 }
 
+uint8_t Game::DetermineNumberOfRounds(uint8_t n)
+{
+	uint8_t rounds;
+	if (n==2)
+	{
+		rounds = 5;
+	}
+	else
+	{
+		if (n==3)
+		{
+			rounds = 4;
+		}
+		else
+		{
+			rounds = 4;
+		}
+	}
+	return rounds;
+}
+
 void Game::ConquerTerritory(Board::Position pos, int order)
 {
 	
@@ -150,7 +171,7 @@ std::unordered_map<std::string, bool> Game::FiftyFiftyAdvantage()
 	return question;
 }
 
-void Game::StartGame(int PlayersNumber)
+Game Game::StartGame(int PlayersNumber)
 {
 	Game game;
 	m_board.ChooseNumberOfPlayers(PlayersNumber);
@@ -186,7 +207,6 @@ void Game::StartGame(int PlayersNumber)
 	{
 		if (PlayersNumber==3)
 		{
-			rounds = 4;
 			Player player1;
 			std::array<uint8_t, 3>Player1Advantages;
 			for (int i = 0; i < Player1Advantages.size(); i++)
@@ -223,7 +243,6 @@ void Game::StartGame(int PlayersNumber)
 		}
 		else
 		{
-			rounds = 4;
 			Player player1;		
 			std::array<uint8_t, 3>Player1Advantages; 
 			for (int i = 0; i < Player1Advantages.size(); i++)
@@ -291,6 +310,7 @@ void Game::StartGame(int PlayersNumber)
 			TerrrytoryCount--;
 		}
 	}
+	return game;
 }
 
 bool Game::TerritoryVecin(Board::Position pos1, Board::Position pos2)

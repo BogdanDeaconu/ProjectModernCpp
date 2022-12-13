@@ -22,11 +22,12 @@ public:
 	void Duel(int order1, int order2);
 
 	void DeterminePlayersTurnOrder();
+	uint8_t DetermineNumberOfRounds(uint8_t n);
 	void ConquerTerritory(Board::Position pos, int order);
 	void DistributeTerritory(Board::Position pos,int order);
 	uint8_t ChooseAdvantage(const Player& player,std::array<uint8_t,3>& Advantage);
 	std::unordered_map<std::string, bool> FiftyFiftyAdvantage();
-	void StartGame(int PlayersNumber);
+	Game StartGame(int PlayersNumber);
 	bool TerritoryVecin(Board::Position pos1, Board::Position pos2);
 private:
 	static const std::size_t numberOfBoolQ = 70;
