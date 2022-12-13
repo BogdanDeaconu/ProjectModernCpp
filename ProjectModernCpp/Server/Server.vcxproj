@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
+    <ClInclude Include="Territory.h" />
     <ClInclude Include="DataBase.h" />
     <ClInclude Include="QuestionBool.h" />
     <ClInclude Include="QuestionInt.h" />
@@ -135,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
+    <ClCompile Include="Territory.cpp" />
     <ClCompile Include="DataBase.cpp" />
     <ClCompile Include="QuestionBool.cpp" />
     <ClCompile Include="QuestionInt.cpp" />

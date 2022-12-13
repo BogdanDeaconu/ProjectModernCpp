@@ -3,6 +3,7 @@
 #include <vector>
 #include <fstream>
 
+#include "Territory.h"
 #include "Account.h"
 #include "QuestionInt.h"
 #include "QuestionBool.h"
@@ -33,8 +34,13 @@ inline auto createStorage(const std::string& filename)
 				sql::make_column("RightAnswer", &QuestionBool::RightGetAnswer, &QuestionBool::SetRightAnswer),
 				sql::make_column("WrongAnswer1", &QuestionBool::WrongGetAnswer1, &QuestionBool::SetWrongAnswer1),
 				sql::make_column("WrongAnswer2", &QuestionBool::WrongGetAnswer2, &QuestionBool::SetWrongAnswer2),
-				sql::make_column("WrongAnswer3", &QuestionBool::WrongGetAnswer3, &QuestionBool::SetWrongAnswer3)
-		));
+				sql::make_column("WrongAnswer3", &QuestionBool::WrongGetAnswer3, &QuestionBool::SetWrongAnswer3)),
+			sql::make_table("Territory",
+				sql::make_column("T_ID", &Territory::GetID, &Territory::SetID, sql::autoincrement(), sql::primary_key()),
+				sql::make_column("TName",&Territory::GetName,&Territory::SetName),
+				sql::make_column("Score", &Territory::GetScore, &Territory::SetScore),
+				sql::make_column("Owner", &Territory::GetOwnerID, &Territory::SetOwnerID))
+		);
 }
 
 using Storage = decltype(createStorage(" "));
@@ -46,6 +52,8 @@ public:
 	void initializeAccount(Account a);
 	void initializeQuestionInt(QuestionInt a);
 	void initializeQuestionBool(QuestionBool a);
+	void initializeTerritory(Territory t);
+	void CreateBoard(int numberofplayers);
 	void AddQuestionsInt();
 	void AddQuestionsBool();
 };
