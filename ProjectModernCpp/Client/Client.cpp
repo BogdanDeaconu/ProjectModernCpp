@@ -25,8 +25,8 @@ void Client::on_SignUpButton_clicked()
 		}
 	);
 	if (response.status_code == 200) {
-		Meniu m;
-		m.show();
+		Meniu* meniu = new Meniu();
+		meniu->show();
 	}
 	else {
 		QMessageBox::information(this, "Error", "Account already exists");
@@ -47,7 +47,8 @@ void Client::on_LogInButton_clicked()
 		}
 	);
 	if (response.status_code == 200) {
-		QMessageBox::information(this, "Success", "Account logged in");
+		Meniu* meniu = new Meniu();
+		meniu->show();
 	}
 	else {
 		QMessageBox::information(this, "Error", "Account not found OR wrong password");

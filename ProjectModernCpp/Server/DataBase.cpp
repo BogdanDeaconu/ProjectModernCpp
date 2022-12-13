@@ -30,7 +30,7 @@ void DataBase::AddQuestionsInt()
 	InFile.open("C://Users//Bogdan//Documents//QuestionsInt.csv");
 	std::getline(InFile, Line);
 	int id = 1;
-	while (std::getline(InFile, Line))
+	while (id<=9)
 	{
 		QuestionInt questionToRead;
 		std::stringstream ss(Line);
@@ -44,6 +44,7 @@ void DataBase::AddQuestionsInt()
 		questionToRead.SetAnswer(std::stoi(substr));
 		substr = "";
 		initializeQuestionInt(questionToRead);
+		std::getline(InFile, Line);
 	}
 }
 
@@ -56,7 +57,7 @@ void DataBase::AddQuestionsBool()
 	InFile2.open("C://Users//Bogdan//Documents//QuestionsBool.csv");
 	std::getline(InFile2, Line);
 	int id = 1;
-	while (std::getline(InFile2, Line))
+	while (id<=27)
 	{
 		QuestionBool questionToRead;
 		std::stringstream ss(Line);
@@ -79,5 +80,6 @@ void DataBase::AddQuestionsBool()
 		questionToRead.SetWrongAnswer3(substr);
 		substr = "";
 		initializeQuestionBool(questionToRead);
+		std::getline(InFile2, Line);
 	}
 }

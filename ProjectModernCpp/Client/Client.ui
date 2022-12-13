@@ -6,16 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1201</width>
-    <height>545</height>
+    <width>1029</width>
+    <height>460</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Client</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-background-image: url(:/Client/Ancient_World_Map_D.jpg);
+   <string notr="true">background-color: rgb(136, 75, 13);
 
 
 
@@ -25,14 +24,15 @@ background-image: url(:/Client/Ancient_World_Map_D.jpg);
    <widget class="QPushButton" name="LogInButton">
     <property name="geometry">
      <rect>
-      <x>840</x>
-      <y>340</y>
+      <x>720</x>
+      <y>260</y>
       <width>181</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(170, 170, 170);</string>
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(170, 85, 0, 255), stop:1 rgba(255, 255, 255, 255));
+border-radius: 15px</string>
     </property>
     <property name="text">
      <string>log In</string>
@@ -41,14 +41,15 @@ background-image: url(:/Client/Ancient_World_Map_D.jpg);
    <widget class="QPushButton" name="SignUpButton">
     <property name="geometry">
      <rect>
-      <x>840</x>
-      <y>390</y>
+      <x>720</x>
+      <y>310</y>
       <width>181</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(170, 170, 170);</string>
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(170, 85, 0, 255), stop:1 rgba(255, 255, 255, 255));
+border-radius: 15px</string>
     </property>
     <property name="text">
      <string>Sign Up</string>
@@ -57,46 +58,82 @@ background-image: url(:/Client/Ancient_World_Map_D.jpg);
    <widget class="QLineEdit" name="UsernameLineEdit">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>310</y>
+      <x>100</x>
+      <y>270</y>
       <width>351</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(170, 170, 170);</string>
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(170, 85, 0, 255), stop:1 rgba(255, 255, 255, 255));
+border-radius: 15px</string>
     </property>
     <property name="text">
-     <string>USERNAME</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLineEdit" name="PasswordLineEdit">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>370</y>
+      <x>100</x>
+      <y>330</y>
       <width>351</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(170, 170, 170);</string>
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(170, 85, 0, 255), stop:1 rgba(255, 255, 255, 255));
+border-radius: 15px</string>
     </property>
     <property name="text">
-     <string>PASSWORD</string>
+     <string/>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>20</y>
+      <width>571</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/Client/triviador-logo.png);
+border-radius: 15px</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
     </property>
    </widget>
    <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>0</y>
-      <width>551</width>
-      <height>81</height>
+      <x>60</x>
+      <y>270</y>
+      <width>31</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">image: url(:/Client/triviador-logo.png);</string>
+     <string notr="true">image: url(:/Client/png-transparent-computer-icons-user-profile-username-avatar-username-user-profile-thumbnail.png);
+image: url(:/Client/972105c5a775f38cf33d3924aea053f1.jpg);</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="widget_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>330</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/Client/imgbin-computer-icons-password-login-user-padlock-Mqgd4GbJEqVnXkeBYtYt28PkN.jpg);</string>
     </property>
    </widget>
   </widget>
@@ -105,7 +142,7 @@ background-image: url(:/Client/Ancient_World_Map_D.jpg);
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1201</width>
+     <width>1029</width>
      <height>22</height>
     </rect>
    </property>
