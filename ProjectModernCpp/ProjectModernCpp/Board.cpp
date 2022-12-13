@@ -45,9 +45,9 @@ int Board::GetNumberOfPlayers()
 	return m_NumberOfPlayers;
 }
 
-void Board::SetBoardDimensions()
+void Board::SetBoardDimensions(int n)
 {
-	if (m_NumberOfPlayers == 2)
+	if (n == 2)
 	{
 		m_height = 3;
 		m_width = 3;
@@ -55,7 +55,7 @@ void Board::SetBoardDimensions()
 	
 	else
 	{
-		if (m_NumberOfPlayers == 3)
+		if (n == 3)
 		{
 			m_height = 5;
 			m_width = 3;
@@ -68,6 +68,26 @@ void Board::SetBoardDimensions()
 	}
 	m_size = m_height * m_width;
 
+}
+
+std::size_t Board::GetHeight()
+{
+	return m_height;
+}
+
+std::size_t Board::GetWidth()
+{
+	return m_width;
+}
+
+void Board::SetHeight(std::size_t height)
+{
+	m_height = height;
+}
+
+void Board::SetWidth(std::size_t width)
+{
+	m_width = width;
 }
 
 

@@ -12,7 +12,7 @@ class Game
 
 public:
 	Game();
-	
+	Game(int n);
 	QuestionWithBool* GetBoolQuestion();
 	QuestionWithInteger* GetIntegerQuestion();
 	
@@ -22,6 +22,8 @@ public:
 	void Duel(int order1, int order2);
 
 	void DeterminePlayersTurnOrder();
+	void AddPlayer(const Player& player);
+	void SetPlayerAdvantages(const Player& player);
 	uint8_t DetermineNumberOfRounds(uint8_t n);
 	void ConquerTerritory(Board::Position pos, int order);
 	void DistributeTerritory(Board::Position pos,int order);
@@ -37,6 +39,7 @@ private:
 	std::vector<QuestionWithInteger*>m_questionswithinteger;
 	std::vector<Player>m_players;
 	Board m_board;
+	std::vector<std::array<uint8_t, 3>>m_PlayersAdvantages;
 };
 
 

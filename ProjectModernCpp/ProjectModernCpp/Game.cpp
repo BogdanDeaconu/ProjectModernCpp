@@ -8,6 +8,11 @@ Game::Game()
 	ReadBoolQ(m_questionswithboool);
 }
 
+Game::Game(int n)
+{
+	m_board.SetBoardDimensions(n);
+}
+
 QuestionWithBool* Game::GetBoolQuestion()
 {
 	return m_questionswithboool[rand() % m_questionswithboool.size()];
@@ -104,6 +109,21 @@ void Game::DeterminePlayersTurnOrder()
 	}
 }
 
+void Game::AddPlayer(const Player& player)
+{
+	m_players.push_back(player);
+}
+
+void Game::SetPlayerAdvantages(const Player& player)
+{
+	std::array<uint8_t, 3>player_advantage;
+	for (int i = 0; i < player_advantage.size(); i++)
+	{
+		player_advantage[i] = 1;
+	}
+	m_PlayersAdvantages.push_back(player_advantage);
+}
+
 uint8_t Game::DetermineNumberOfRounds(uint8_t n)
 {
 	uint8_t rounds;
@@ -175,11 +195,9 @@ Game Game::StartGame(int PlayersNumber)
 {
 	Game game;
 	m_board.ChooseNumberOfPlayers(PlayersNumber);
-	m_board.SetBoardDimensions();
-	uint8_t rounds;
+	m_board.SetBoardDimensions(PlayersNumber);
 	if (PlayersNumber==2)
 	{
-		rounds = 5;
 		Player player1;
 	    std:: array<uint8_t, 3>Player1Advantages;
 		for (int i = 0; i < Player1Advantages.size(); i++)

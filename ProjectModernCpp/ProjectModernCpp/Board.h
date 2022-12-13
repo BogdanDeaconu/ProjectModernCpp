@@ -21,8 +21,11 @@ public:
 	
 	void ChooseNumberOfPlayers(int n);
 	int GetNumberOfPlayers();
-	void SetBoardDimensions();
-	
+	void SetBoardDimensions(int n);
+	std::size_t GetHeight();
+	std::size_t GetWidth();
+	void SetHeight(std::size_t height);
+	void SetWidth(std::size_t width);
 
 private:
 	std::vector<Territory>m_board;
