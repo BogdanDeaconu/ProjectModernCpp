@@ -8,4 +8,3 @@ Meniu::Meniu(QWidget *parent)
 
 Meniu::~Meniu()
 {}
-

@@ -12,7 +12,6 @@ public:
 	using Position = std::pair<uint8_t, uint8_t>;
 
 public:
-	
 	//getter
 	const Territory& operator[](Position pos) const;
 	//setter

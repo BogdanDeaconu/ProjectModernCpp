@@ -21,33 +21,6 @@ void DataBase::initializeQuestionBool(QuestionBool a)
 	m_db.sync_schema();
 }
 
-void DataBase::initializeTerritory(Territory t)
-{
-	m_db.sync_schema();
-	m_db.insert(t);
-	m_db.sync_schema();
-}
-
-void DataBase::CreateBoard(int numberofplayers)
-{
-	int numberofterritorys;
-	if (numberofplayers == 2) {
-		numberofterritorys = 9;
-	}
-	else {
-		if (numberofplayers == 3) {
-			numberofterritorys = 15;
-		}
-		else {
-			numberofterritorys == 24;
-		}
-	}
-	int id = 1;
-	while (id <= numberofterritorys) {
-		
-	}
-}
-
 void DataBase::AddQuestionsInt()
 {
 	std::ifstream InFile;
