@@ -65,7 +65,19 @@ int main(){
 			}
 		
 		});
-						
+		CROW_ROUTE(app, "/qetquestionint")([&db]() {
+			
+			crow::json::wvalue question_int;
+		for(auto& question :db.m_db.iterate<QuestionInt>())
+		{
+			//if pentru cautarea intrebarii in functie de id;
+			question_int["question"] = question.GetAnswer();
+			question_int["answer"] = question.GetAnswer();
+			
+			return question_int;
+		}
+		});
+			
 		app.port(18080).multithreaded().run();
 
 
