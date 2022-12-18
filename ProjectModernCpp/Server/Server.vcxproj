@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClInclude Include="Account.h" />
     <ClInclude Include="DataBase.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="QuestionBool.h" />
     <ClInclude Include="QuestionInt.h" />
     <ClInclude Include="utils.h" />
@@ -136,6 +137,7 @@
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
     <ClCompile Include="DataBase.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="QuestionBool.cpp" />
     <ClCompile Include="QuestionInt.cpp" />
     <ClCompile Include="Test.cpp" />
