@@ -39,3 +39,7 @@ int QuestionInt::GetAnswer()const
 {
 	return this->m_answer;
 }
+int QuestionInt::CheckAnswer(int answer)
+{
+	return abs(m_answer - answer);
+}

@@ -18,6 +18,7 @@ public:
 
 	void SetAnswer(int answer);
 	int GetAnswer()const;
+	int CheckAnswer(int answer);
 private:
 	int m_id;
 	std::string m_question;
