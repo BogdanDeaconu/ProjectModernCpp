@@ -50,7 +50,14 @@ int main(){
 			return crow::json::wvalue{x};
 		});
 		
-		
+		CROW_ROUTE(app, "/playerjoingame")([&numberofplayers]() {
+			if (numberofplayers > 0 and numberofplayers < 4) {
+				numberofplayers++;
+			}
+			auto x = crow::json::wvalue{ {"numberofplayers",numberofplayers} };
+			return crow::json::wvalue{ x };
+		});
+
 		CROW_ROUTE(app, "/getquestionbool")([&db]() {
 
 			crow::json::wvalue question_bool;
