@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>982</width>
+    <width>1109</width>
     <height>556</height>
    </rect>
   </property>
@@ -74,13 +74,13 @@ border-radius: 15px</string>
     <property name="geometry">
      <rect>
       <x>210</x>
-      <y>20</y>
+      <y>10</y>
       <width>591</width>
       <height>111</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">image: url(:/Client/triviador-logo.png);
+     <string notr="true">image: url(:/new/prefix1/triviador-logo.png);
 border-radius: 15px</string>
     </property>
     <property name="frameShape">
@@ -90,43 +90,133 @@ border-radius: 15px</string>
      <enum>QFrame::Raised</enum>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton">
+   <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
-      <x>680</x>
-      <y>320</y>
-      <width>141</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>2 Players</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_2">
-    <property name="geometry">
-     <rect>
-      <x>680</x>
-      <y>360</y>
-      <width>141</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>3 Players</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_3">
-    <property name="geometry">
-     <rect>
-      <x>680</x>
-      <y>390</y>
+      <x>920</x>
+      <y>20</y>
       <width>151</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>2</x>
+       <y>0</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+font: 700 14pt &quot;Times New Roman&quot;;
+border-radius: 15px</string>
+     </property>
+     <property name="text">
+      <string>Logged as:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="Account">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>113</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 15px</string>
+     </property>
+     <property name="text">
+      <string>Account</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>71</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+font: 700 14pt &quot;Times New Roman&quot;;
+border-radius: 15px</string>
+     </property>
+     <property name="text">
+      <string>Losses:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>61</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+font: 700 14pt &quot;Times New Roman&quot;;
+border-radius: 15px</string>
+     </property>
+     <property name="text">
+      <string>Wins:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="Wins">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>80</y>
+       <width>41</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 15px</string>
+     </property>
+     <property name="text">
+      <string>wins</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_5">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>110</y>
+       <width>41</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 15px</string>
+     </property>
+     <property name="text">
+      <string>losses</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>51</width>
       <height>31</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(170, 85, 0, 255), stop:1 rgba(255, 255, 255, 255));
+border-radius: 15px</string>
+    </property>
     <property name="text">
-     <string>4 Players</string>
+     <string>Log Out</string>
     </property>
    </widget>
   </widget>
@@ -135,7 +225,7 @@ border-radius: 15px</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>982</width>
+     <width>1109</width>
      <height>22</height>
     </rect>
    </property>
@@ -152,7 +242,8 @@ border-radius: 15px</string>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="Client.qrc"/>
+  <include location="Resource.qrc"/>
+  <include location="Resource.qrc"/>
  </resources>
  <connections/>
 </ui>

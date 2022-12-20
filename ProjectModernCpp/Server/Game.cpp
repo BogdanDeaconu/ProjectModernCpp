@@ -1,8 +1,5 @@
 ﻿#include "Game.h"
-Game::Game(uint8_t n)
-{
-	m_board.SetBoardDimensions(n);
-}
+
 void Game::AddPlayer(const Player& player)
 {
 	m_players.push_back(player);
@@ -36,24 +33,7 @@ uint8_t Game::DetermineNumberOfRounds(uint8_t n)
 	}
 	return rounds;
 }
-uint8_t Game::ChooseAdvantage(const Player& player, std::array<uint8_t, 3>& Advantage)
-{
-	Board::Position pos;
-	uint8_t advantage;
-	uint8_t unavailable_advantage = 4;
-	int line, column;
-	std::cin >> line >> column;
-	std::cin >> advantage;
-	pos = { line,column };
-	if (m_board[pos].GetScore() >= 200 and Advantage[advantage] != 0)
-	{
-		uint32_t new_score;
-		new_score = m_board[pos].GetScore() - 100;
-		Advantage[advantage] = 0;
-		return advantage;
-	}
-	return unavailable_advantage;
-}
+
 void Game::DeterminePlayersTurnOrder()
 {
 	QuestionInt question(1,"În ce an s-a născut Regele Mihai I?", 1921);

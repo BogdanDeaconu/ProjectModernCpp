@@ -23,9 +23,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="Client.qrc">
-      <Filter>Resource Files</Filter>
-    </QtRcc>
     <QtUic Include="Client.ui">
       <Filter>Form Files</Filter>
     </QtUic>
@@ -53,5 +50,10 @@
     <QtMoc Include="Meniu.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="Resource.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
   </ItemGroup>
 </Project>

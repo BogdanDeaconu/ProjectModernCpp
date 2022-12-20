@@ -1,6 +1,4 @@
 #include "Client.h"
-#include "Meniu.h"
-
 
 Client::Client(QWidget *parent)
     : QMainWindow(parent)
@@ -26,7 +24,9 @@ void Client::on_SignUpButton_clicked()
 	);
 	if (response.status_code == 200) {
 		Meniu* meniu = new Meniu();
+		this->close();
 		meniu->show();
+		meniu->SetUserMeniu(name);
 	}
 	else {
 		QMessageBox::information(this, "Error", "Account already exists");
@@ -46,9 +46,11 @@ void Client::on_LogInButton_clicked()
 			{"password" , aux2}
 		}
 	);
-	if (response.status_code == 200) {
+	if (response.status_code == 201) {
 		Meniu* meniu = new Meniu();
+		this->close();
 		meniu->show();
+		meniu->SetUserMeniu(name);
 	}
 	else {
 		QMessageBox::information(this, "Error", "Account not found OR wrong password");

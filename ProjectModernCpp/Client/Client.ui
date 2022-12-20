@@ -99,7 +99,7 @@ border-radius: 15px</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">image: url(:/Client/triviador-logo.png);
+     <string notr="true">image: url(:/new/prefix1/triviador-logo.png);
 border-radius: 15px</string>
     </property>
     <property name="frameShape">
@@ -107,33 +107,6 @@ border-radius: 15px</string>
     </property>
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
-    </property>
-   </widget>
-   <widget class="QWidget" name="widget" native="true">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>270</y>
-      <width>31</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">image: url(:/Client/png-transparent-computer-icons-user-profile-username-avatar-username-user-profile-thumbnail.png);
-image: url(:/Client/972105c5a775f38cf33d3924aea053f1.jpg);</string>
-    </property>
-   </widget>
-   <widget class="QWidget" name="widget_2" native="true">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>330</y>
-      <width>31</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">image: url(:/Client/imgbin-computer-icons-password-login-user-padlock-Mqgd4GbJEqVnXkeBYtYt28PkN.jpg);</string>
     </property>
    </widget>
   </widget>
@@ -170,7 +143,8 @@ image: url(:/Client/972105c5a775f38cf33d3924aea053f1.jpg);</string>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="Client.qrc"/>
+  <include location="Resource.qrc"/>
+  <include location="Resource.qrc"/>
  </resources>
  <connections/>
 </ui>

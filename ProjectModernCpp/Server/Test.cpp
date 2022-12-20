@@ -4,6 +4,7 @@
 int main(){
 
 		DataBase db;
+		int numberofplayers = 0;
 		db.AddQuestionsBool();
 		db.AddQuestionsInt();
 
@@ -15,41 +16,41 @@ int main(){
 			auto username = x["username"];
 			auto password = x["password"];
 			Account account(username,password);
+			
 			for (auto& user : db.m_db.iterate<Account>()) {
 				if (user.GetUsername() == username) {
 					return crow::response(400);
 				}
-				else {
-					db.initializeAccount(account);
-					return crow::response(200);
-				}
 			}
-			});
+			db.initializeAccount(account);
+	        return crow::response(200);
 			
+			});
+
 		CROW_ROUTE(app, "/loginaccount")
 			.methods("POST"_method)
 			([&db](const crow::request& req) {
 			auto x = parseUrlArgs(req.body);
 			auto username = x["username"];
 			auto password = x["password"];
-			for (auto& user : db.m_db.iterate<Account>())
-			{
-				if (user.GetUsername() == username)
-				{
-					if (user.GetPassword() == password)
-					{
-						return crow::response(200);
-					}
-					else
-					{
-						return crow::response(401, "Wrong password");
-					}
+			Account account(username, password);
+			for (auto& user : db.m_db.iterate<Account>()) {
+				if (user.GetUsername() == username && user.GetPassword() == password) {
+					return crow::response(201);
 				}
 				else {
-					return crow::response(401, "Account not found");
+					return crow::response(400);
 				}
 			}
 			});
+
+		CROW_ROUTE(app, "/playerstartgame")([&numberofplayers]() {
+			numberofplayers = 1;
+			auto x = crow::json::wvalue{ {"numberofplayers",numberofplayers} };
+			return crow::json::wvalue{x};
+		});
+		
+		
 		CROW_ROUTE(app, "/getquestionbool")([&db]() {
 
 			crow::json::wvalue question_bool;
@@ -61,7 +62,7 @@ int main(){
 					question_bool["2"] = question.WrongGetAnswer1();
 					question_bool["3"] = question.WrongGetAnswer2();
 					question_bool["4"] = question.WrongGetAnswer3();
-				return question_bool;
+					return crow::json::wvalue{ question_bool };
 			}
 		
 		});
@@ -74,7 +75,7 @@ int main(){
 			question_int["question"] = question.GetAnswer();
 			question_int["answer"] = question.GetAnswer();
 			
-			return question_int;
+			return crow::json::wvalue{ question_int };
 		}
 		});
 			
