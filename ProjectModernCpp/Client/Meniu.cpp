@@ -16,6 +16,9 @@ void Meniu::on_StartGameButton_clicked()
 	int numberofplayers = load["numberofplayers"].i();
 	if (numberofplayers == 1) {
 		QMessageBox::information(this, "Error", "Game started, Wait for players");
+        Game* game = new Game();
+        this->close();
+        game->show();
 	}
 	else {
 		QMessageBox::information(this, "Error", "Game can t start");

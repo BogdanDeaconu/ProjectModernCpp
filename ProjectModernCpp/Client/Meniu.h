@@ -4,6 +4,7 @@
 #include "ui_Meniu.h"
 #include <qmessagebox.h>
 #include <qstring.h>
+#include "Game.h"
 
 #include <cpr/cpr.h>
 #include <crow.h>
