@@ -34,6 +34,16 @@ public:
     GameRoom(int id, RoomInfo roomInfo, Player player);
     ~GameRoom();
     
+    bool addPlayer(const Player& player);
+    bool removePlayer(const Player& player);
+    std::vector<Player> getPlayers() const;
+    RoomInfo getRoomInfo() const;
+    void setRoomInfo(RoomInfo roomInfo) { this->m_roomInfo = roomInfo; }
+    void setGameHasBegun(bool gameHasBegun) { this->gameHasBegun = gameHasBegun; }
+    bool getGameHasBegun() const { return this->gameHasBegun; }
+    std::vector<std::string>getAllUsernames();
+    
+    
 private:
     bool gameHasBegun;
     std::vector<Player> m_players;
