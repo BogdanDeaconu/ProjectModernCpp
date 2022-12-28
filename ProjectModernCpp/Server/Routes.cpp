@@ -1,5 +1,6 @@
 #include "DataBase.h"
 #include "utils.h"
+#include "GameRoom.h"
 
 int main(){
 
@@ -7,8 +8,10 @@ int main(){
 		int numberofplayers = 0;
 		db.AddQuestionsBool();
 		db.AddQuestionsInt();
-
+        std::vector<Player>players;
+        GameRoom room;
 		crow::SimpleApp app;
+      
 		CROW_ROUTE(app, "/signupaccount")
 			.methods("PUT"_method)
 			([&db](const crow::request& req) {
@@ -81,14 +84,28 @@ int main(){
 		for(auto& question :db.m_db.iterate<QuestionInt>())
 		{
             if (question.GetID() == random) {
-                question_int["question"] = question.GetAnswer();
+                question_int["question"] = question.GetQuestion();
                 question_int["answer"] = question.GetAnswer();
 
                 return crow::json::wvalue{ question_int };
             }
 		}
 		});
-			
+     
+        CROW_ROUTE(app, "/createRoom")([&room]() {
+            crow::json::wvalue x;
+                x["id"] = room.getRoomInfo().id;
+                x["name"] = room.getRoomInfo().name;
+                x["maxPlayers"] = room.getRoomInfo().maxPlayers;
+                x["numberOfQuestions"] = room.getRoomInfo().numberOfQuestions;
+                x["boardDimension"] = room.getRoomInfo().boardDimensions;
+                x["timeForQuestion"] = room.getRoomInfo().timeForQuestion;
+                x["isActive"] = room.getRoomInfo().isActive;
+
+            return crow::json::wvalue{ x };
+
+        });
+        
 		app.port(18080).multithreaded().run();
 
 
