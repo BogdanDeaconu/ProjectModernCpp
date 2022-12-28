@@ -62,7 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Resource.qrc">
-      <Filter>Resource Files</Filter>
+      <Filter>Source Files</Filter>
     </QtRcc>
   </ItemGroup>
 </Project>

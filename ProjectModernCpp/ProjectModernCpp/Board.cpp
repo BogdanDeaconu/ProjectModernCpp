@@ -46,7 +46,7 @@ int Board::GetNumberOfPlayers()
 	return NumberOfPlayers;
 }
 
-void Board::SetBoardDimensions(int n)
+void Board::SetBoardDimensions(int m_NumberOfPlayers)
 {
 	if (m_NumberOfPlayers == 2)
 	{
