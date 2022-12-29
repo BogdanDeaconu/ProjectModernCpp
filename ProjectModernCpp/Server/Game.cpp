@@ -74,3 +74,16 @@ uint8_t Game::ChooseAdvantage(const Player& player, std::array<uint8_t, 3>& Adva
     //}
     return unavailable_advantage;
 }
+std::unordered_map<std::string, bool> Game::FiftyFiftyAdvantage()
+{
+    uint8_t count = 2;
+    std::string corect_answer;
+    std::string answer2;
+    std::string answer3;
+    std::string answer4;
+    std::cin >> corect_answer >> answer2 >> answer3 >> answer4;
+    std::unordered_map<std::string, bool>question({ {corect_answer,0},{answer2,1},{answer3,1},{answer4,1} });
+    question.erase(answer3);
+    question.erase(answer4);
+    return question;
+}

@@ -11,6 +11,7 @@ public:
 	uint8_t DetermineNumberOfRounds(uint8_t n);
 	void DeterminePlayersTurnOrder();
     uint8_t ChooseAdvantage(const Player& player, std::array<uint8_t, 3>& Advantage);
+    std::unordered_map<std::string, bool> FiftyFiftyAdvantage();
 private:
 	std::vector<QuestionBool*>m_questionswithboool;
 	std::vector<QuestionInt*>m_questionswithinteger;
