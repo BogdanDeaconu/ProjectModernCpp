@@ -57,3 +57,20 @@ void Game::DeterminePlayersTurnOrder()
 		}
 	}
 }
+uint8_t Game::ChooseAdvantage(const Player& player, std::array<uint8_t, 3>& Advantage)
+{
+    uint8_t advantage;
+    uint8_t unavailable_advantage = 4;
+    int line, column;
+    std::cin >> line >> column;
+    std::cin >> advantage;
+    //if (m_board[line][column].GetScore() >= 200 and Advantage[advantage] != 0)
+    //{
+        //uint32_t new_score;
+       // new_score = m_board[line][column].GetScore() - 100;
+        //m_board[line][column].SetScore(new_score);
+        //Advantage[advantage] = 0;
+        //return advantage;
+    //}
+    return unavailable_advantage;
+}
