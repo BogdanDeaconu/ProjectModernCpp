@@ -106,3 +106,26 @@ std::vector<QuestionBool>DataBase::GetQuestionsBool(int numberOfQuestions)
     
     return questions;
 }
+
+std::vector<QuestionInt> DataBase::GetQuestionsInt(int numberOfQuestions)
+{
+    sqlite3* db;
+    int rc = sqlite3_open("database.sqlite", &db);
+
+    std::string sql = "SELECT question, answer FROM questionint LIMIT numberOfQuestions";
+
+
+    sqlite3_stmt* stmt;
+    rc = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, NULL);
+
+    std::vector<QuestionInt> questions;
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
+        QuestionInt q(sqlite3_column_int(stmt, 0), (char*)sqlite3_column_text(stmt, 1), sqlite3_column_int(stmt, 2));
+        questions.push_back(q);
+    }
+
+    sqlite3_finalize(stmt);
+    sqlite3_close(db);
+
+    return questions;
+}

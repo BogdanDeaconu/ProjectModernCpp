@@ -49,6 +49,6 @@ public:
 	void AddQuestionsInt();
 	void AddQuestionsBool();
     std::vector<QuestionBool>GetQuestionsBool(int numberOfQuestions);
-    //std::vector<QuestionBool>* GetQuestionsBool(int numberOfQuestions);
+    std::vector<QuestionInt>GetQuestionsInt(int numberOfQuestions);
     
 };
