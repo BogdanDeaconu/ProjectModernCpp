@@ -83,3 +83,26 @@ void DataBase::AddQuestionsBool()
 		std::getline(InFile2, Line);
 	}
 }
+
+std::vector<QuestionBool>DataBase::GetQuestionsBool(int numberOfQuestions)
+{
+    sqlite3* db;
+    int rc = sqlite3_open("database.sqlite", &db);
+    
+    std::string sql = "SELECT question, rightanswer,wronganswer1,wronganswer2,wronganswer3 FROM questionbool LIMIT numberOfQuestions";
+
+    
+    sqlite3_stmt* stmt;
+    rc = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, NULL);
+
+    std::vector<QuestionBool> questions;
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
+        QuestionBool q(sqlite3_column_int(stmt, 0), (char*)sqlite3_column_text(stmt, 1), (char*)sqlite3_column_text(stmt, 2), (char*)sqlite3_column_text(stmt, 3), (char*)sqlite3_column_text(stmt, 4), (char*)sqlite3_column_text(stmt, 5));
+        questions.push_back(q);
+    }
+
+    sqlite3_finalize(stmt);
+    sqlite3_close(db);
+    
+    return questions;
+}
