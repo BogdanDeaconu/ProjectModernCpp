@@ -4,9 +4,11 @@
 #include"Player.h"
 #include<array>
 #include<tuple>
+#include "GameRoom.h"
 class Game
 {
 public:
+    Game(GameRoom r);
 	void AddPlayer(const Player& player);
 	void SetPlayerAdvantages(const Player& player);
 	uint8_t DetermineNumberOfRounds(uint8_t n);

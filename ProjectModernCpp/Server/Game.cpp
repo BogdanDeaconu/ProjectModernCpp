@@ -1,5 +1,16 @@
 ﻿#include "Game.h"
 
+Game::Game(GameRoom r)
+{
+    
+    //m_board = Board(r.getRoomInfo().boardDimensions);
+    //functie care adauga jucatorii din camera in vectorul de jucatori
+    for (auto player : r.getPlayers())
+    {
+        m_players.push_back(player);
+    }
+}
+
 void Game::AddPlayer(const Player& player)
 {
 	m_players.push_back(player);
