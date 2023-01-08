@@ -79,32 +79,33 @@ int main(){
 		
 		});
 		CROW_ROUTE(app, "/qetquestionint")([&db]() {
-            int random = rand() % db.m_db.count<QuestionInt>();
+            int random = rand() % 70;
 			crow::json::wvalue question_int;
-		for(auto& question :db.m_db.iterate<QuestionInt>())
-		{
-            if (question.GetID() == random) {
-                question_int["question"] = question.GetQuestion();
-                question_int["answer"] = question.GetAnswer();
-
-                return crow::json::wvalue{ question_int };
-            }
-		}
+		    
+            for(auto& question :db.m_db.iterate<QuestionInt>())
+		    {
+               if (question.GetID() == random) {
+                   question_int["question"] = question.GetQuestion();
+                   question_int["answer"] = question.GetAnswer();
+                   return crow::json::wvalue{ question_int };
+               }
+		    }
+          
 		});
      
         CROW_ROUTE(app, "/createRoom")([&room]() {
-            crow::json::wvalue x;
-                x["id"] = room.getRoomInfo().id;
-                x["name"] = room.getRoomInfo().name;
-                x["maxPlayers"] = room.getRoomInfo().maxPlayers;
-                x["numberOfQuestions"] = room.getRoomInfo().numberOfQuestions;
-                x["boardDimension"] = room.getRoomInfo().boardDimensions;
-                x["timeForQuestion"] = room.getRoomInfo().timeForQuestion;
-                x["isActive"] = room.getRoomInfo().isActive;
+           crow::json::wvalue x;
+               x["id"] = room.getRoomInfo().id;
+               x["name"] = room.getRoomInfo().name;
+               x["maxPlayers"] = room.getRoomInfo().maxPlayers;
+               x["numberOfQuestions"] = room.getRoomInfo().numberOfQuestions;
+               x["boardDimension"] = room.getRoomInfo().boardDimensions;
+               x["timeForQuestion"] = room.getRoomInfo().timeForQuestion;
+               x["isActive"] = room.getRoomInfo().isActive;
 
-            return crow::json::wvalue{ x };
-
-        });
+                    return crow::json::wvalue{ x };
+            
+              });
         
 		app.port(18080).multithreaded().run();
 

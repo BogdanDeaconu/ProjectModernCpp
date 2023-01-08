@@ -5,6 +5,7 @@
 #include <qmessagebox.h>
 #include <qstring.h>
 
+
 #include <cpr/cpr.h>
 #include <crow.h>
 
@@ -20,7 +21,7 @@ private:
 	Ui::GameClass ui;
 
 private slots:
-    void on_GetBool_clicked();
+    void on_GetQuestionInt_clicked();
 
    
 };

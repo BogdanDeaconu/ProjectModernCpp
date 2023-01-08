@@ -130,6 +130,7 @@
     <ClInclude Include="Account.h" />
     <ClInclude Include="DataBase.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameRoom.h" />
     <ClInclude Include="QuestionBool.h" />
     <ClInclude Include="QuestionInt.h" />
     <ClInclude Include="utils.h" />
@@ -138,6 +139,7 @@
     <ClCompile Include="Account.cpp" />
     <ClCompile Include="DataBase.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameRoom.cpp" />
     <ClCompile Include="QuestionBool.cpp" />
     <ClCompile Include="QuestionInt.cpp" />
     <ClCompile Include="Routes.cpp" />
