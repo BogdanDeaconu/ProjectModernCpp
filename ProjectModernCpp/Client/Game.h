@@ -17,11 +17,14 @@ public:
 	Game(QWidget *parent = nullptr);
 	~Game();
 
+    void on_GetQuestionBool_clicked();
+
 private:
 	Ui::GameClass ui;
 
 private slots:
     void on_GetQuestionInt_clicked();
 
-   
+    void on_GetQuestionBool_clicked();
+
 };

@@ -14,11 +14,11 @@
    <string>Game</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="GetBool">
+   <widget class="QPushButton" name="GetQuestionBool">
     <property name="geometry">
      <rect>
       <x>190</x>
-      <y>160</y>
+      <y>170</y>
       <width>101</width>
       <height>24</height>
      </rect>
@@ -27,7 +27,7 @@
      <string>GetQuestionBool</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="GetQuestionInt">
     <property name="geometry">
      <rect>
       <x>350</x>
@@ -44,7 +44,7 @@
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>190</y>
+      <y>200</y>
       <width>351</width>
       <height>22</height>
      </rect>

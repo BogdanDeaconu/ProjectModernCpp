@@ -151,3 +151,5 @@ uint16_t Game::SuggestAnswerAdvantage(QuestionInt question)
         }
     }
 }
+
+
