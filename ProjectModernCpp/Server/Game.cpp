@@ -98,3 +98,14 @@ std::unordered_map<std::string, bool> Game::FiftyFiftyAdvantage()
     question.erase(answer4);
     return question;
 }
+
+std::tuple<uint16_t, uint16_t, uint16_t, uint16_t> Game::ChooseAnswerAdvantage(QuestionInt question)
+{
+    std::tuple<uint16_t, uint16_t, uint16_t, uint16_t> answers;
+    uint16_t corectAnswer = question.GetAnswer();
+    uint16_t answer2 = question.GetAnswer() - 10;
+    uint16_t answer3 = question.GetAnswer() + 10;
+    uint16_t answer4 = question.GetAnswer() - 18;
+    answers = std::make_tuple(corectAnswer, answer2, answer3, answer4);
+    return answers;
+}

@@ -3,6 +3,7 @@
 #include"QuestionInt.h"
 #include"Player.h"
 #include<array>
+#include<tuple>
 class Game
 {
 public:
@@ -14,6 +15,7 @@ public:
     void ConquerTerritory(uint8_t line,uint8_t column, uint8_t order);
     void DistributeTerritory(uint8_t line, uint8_t column, uint8_t order);
     std::unordered_map<std::string, bool> FiftyFiftyAdvantage();
+    std::tuple<uint16_t, uint16_t, uint16_t, uint16_t> ChooseAnswerAdvantage(QuestionInt question);
 private:
 	std::vector<QuestionBool*>m_questionswithboool;
 	std::vector<QuestionInt*>m_questionswithinteger;
