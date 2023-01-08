@@ -74,6 +74,17 @@ uint8_t Game::ChooseAdvantage(const Player& player, std::array<uint8_t, 3>& Adva
     //}
     return unavailable_advantage;
 }
+void Game::ConquerTerritory(uint8_t line, uint8_t column, uint8_t order)
+{
+
+    //m_board[line][column].SetTerritoryColor(m_players[order].GetColor());
+
+}
+void Game::DistributeTerritory(uint8_t line, uint8_t column, uint8_t order)
+{
+    ConquerTerritory(line,column, order);
+    //m_board[line][column].SetTerritoryScore(100);
+}
 std::unordered_map<std::string, bool> Game::FiftyFiftyAdvantage()
 {
     uint8_t count = 2;
