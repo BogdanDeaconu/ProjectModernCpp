@@ -109,3 +109,34 @@ std::tuple<uint16_t, uint16_t, uint16_t, uint16_t> Game::ChooseAnswerAdvantage(Q
     answers = std::make_tuple(corectAnswer, answer2, answer3, answer4);
     return answers;
 }
+
+uint16_t Game::SuggestAnswerAdvantage(QuestionInt question)
+{
+    uint16_t corectAnswer = question.GetAnswer();
+    uint16_t closeAnswer1 = question.GetAnswer() - 5;
+    uint16_t closeAnswer2 = question.GetAnswer() + 5;
+    uint16_t closeAnswer3 = question.GetAnswer() + 3;
+    uint8_t random= 1 + (rand() % 4);
+    if (random==1)
+    {
+        return corectAnswer;
+    }
+    else
+    {
+        if (random==2)
+        {
+            return closeAnswer1;
+        }
+        else
+        {
+            if (random==3)
+            {
+                return closeAnswer2;
+            }
+            else
+            {
+                return closeAnswer3;
+            }
+        }
+    }
+}
