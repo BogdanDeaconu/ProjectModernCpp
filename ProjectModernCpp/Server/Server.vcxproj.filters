@@ -39,9 +39,6 @@
     <ClInclude Include="DataBase.h">
       <Filter>Header Files\DB Heades</Filter>
     </ClInclude>
-    <ClInclude Include="GameRoom.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Routes.cpp">
@@ -64,9 +61,6 @@
     </ClCompile>
     <ClCompile Include="QuestionInt.cpp">
       <Filter>Source Files\DB Cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="GameRoom.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
