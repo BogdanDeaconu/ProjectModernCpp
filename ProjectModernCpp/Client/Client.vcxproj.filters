@@ -32,12 +32,15 @@
     <ClCompile Include="Client.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <QtUic Include="Game.ui">
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="Board.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+=======
+>>>>>>> parent of bd0e25d (Create Game Widget in Client and Route for Questions)
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -46,12 +49,15 @@
     <ClCompile Include="Meniu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Board.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+=======
+>>>>>>> parent of bd0e25d (Create Game Widget in Client and Route for Questions)
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="Meniu.ui">
@@ -62,12 +68,15 @@
     <QtMoc Include="Meniu.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+<<<<<<< HEAD
     <QtMoc Include="Game.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="Board.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+=======
+>>>>>>> parent of bd0e25d (Create Game Widget in Client and Route for Questions)
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Resource.qrc">

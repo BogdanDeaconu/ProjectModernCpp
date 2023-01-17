@@ -61,23 +61,22 @@ int main(){
 		});
 
 		CROW_ROUTE(app, "/getquestionbool")([&db]() {
-            int random = rand() % 30;
+
 			crow::json::wvalue question_bool;
 			
 			for (auto& question : db.m_db.iterate<QuestionBool>()) {
-				
-                if (question.GetID() == random) {
-                    question_bool["question"] = question.GetQuestion();
-                    question_bool["1"] = question.RightGetAnswer();
-                    question_bool["2"] = question.WrongGetAnswer1();
-                    question_bool["3"] = question.WrongGetAnswer2();
-                    question_bool["4"] = question.WrongGetAnswer3();
-                    return crow::json::wvalue{ question_bool };
-                }
+				//if pentru cautarea intrebarii in functie de id;
+					question_bool["question"] = question.GetQuestion();
+					question_bool["1"] = question.RightGetAnswer();
+					question_bool["2"] = question.WrongGetAnswer1();
+					question_bool["3"] = question.WrongGetAnswer2();
+					question_bool["4"] = question.WrongGetAnswer3();
+					return crow::json::wvalue{ question_bool };
 			}
 		
 		});
 		CROW_ROUTE(app, "/qetquestionint")([&db]() {
+<<<<<<< HEAD
             int random = rand() % 70;
 			crow::json::wvalue question_int;
 		    
@@ -90,6 +89,18 @@ int main(){
                }
 		    }
           
+=======
+			
+			crow::json::wvalue question_int;
+		for(auto& question :db.m_db.iterate<QuestionInt>())
+		{
+			//if pentru cautarea intrebarii in functie de id;
+			question_int["question"] = question.GetAnswer();
+			question_int["answer"] = question.GetAnswer();
+			
+			return crow::json::wvalue{ question_int };
+		}
+>>>>>>> parent of bd0e25d (Create Game Widget in Client and Route for Questions)
 		});
      
 		app.port(18080).multithreaded().run();
