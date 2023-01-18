@@ -23,7 +23,7 @@ void Client::on_SignUpButton_clicked()
 		}
 	);
 	if (response.status_code == 200) {
-		Meniu* meniu = new Meniu();
+		Meniu* meniu = new Meniu(name);
 		this->close();
 		meniu->show();
 		meniu->SetUserMeniu(name);
@@ -47,7 +47,7 @@ void Client::on_LogInButton_clicked()
 		}
 	);
 	if (response.status_code == 201) {
-		Meniu* meniu = new Meniu();
+		Meniu* meniu = new Meniu(name);
 		this->close();
 		meniu->show();
 		meniu->SetUserMeniu(name);

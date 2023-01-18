@@ -1,9 +1,11 @@
 #include "Meniu.h"
+#include "Lobby.h"
 
-Meniu::Meniu(QWidget *parent)
+Meniu::Meniu(QString username,QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
+    this->username = username.toUtf8().constData();
 }
 
 Meniu::~Meniu()
@@ -11,15 +13,16 @@ Meniu::~Meniu()
 
 void Meniu::on_StartGameButton_clicked()
 {
-	cpr::Response r = cpr::Get(cpr::Url{ "http://localhost:18080/playerstartgame" });
-	auto load = crow::json::load(r.text);
-	int numberofplayers = load["numberofplayers"].i();
-	if (numberofplayers == 1) {
-		QMessageBox::information(this, "Error", "Game started, Wait for players");
-	}
-	else {
-		QMessageBox::information(this, "Error", "Game can t start");
-	}
+	auto r=cpr::Put(cpr::Url{"http://localhost:18080/createLobby"},
+        cpr::Body{ "&ownername=", username });
+    if (r.status_code == 200)
+    {
+        Lobby* lobbypage = new Lobby();
+        lobbypage->show();
+    }
+    else {
+        QMessageBox::information(this, "Error","Lobby can t be created");
+    }
 }
 
 void Meniu::SetUserMeniu(QString username)
@@ -35,16 +38,17 @@ void Meniu::SetUserMeniu(QString username)
 
 void Meniu::on_EnterGameButton_clicked()
 {
-	cpr::Response r = cpr::Get(cpr::Url{ "http://localhost:18080/playerjoingame" });
-	auto load = crow::json::load(r.text);
-	int nuberofplayer = load["numberofplayers"].i();
-	if (nuberofplayer == 2) {
-		QMessageBox::information(this, "Error", "Game started, Wait for players");
-	}
-	else {
-		QMessageBox::information(this, "Error", "Game can t start");
-	}
-
+    std::string ownername = ui.lineEdit_2->text().toUtf8().constData();
+    auto r = cpr::Post(cpr::Url{ "http://localhost:18080/joinLobby" },
+        cpr::Body{ "&username="+username,"&gameOwner="+ownername});
+    if (r.status_code == 200)
+    {
+        Lobby* lobbypage = new Lobby();
+        lobbypage->show();
+    }
+    else {
+        QMessageBox::information(this, "Error", "Lobby can t be found");
+    }
 }
 
 void Meniu::on_ExitGameButton_clicked() {

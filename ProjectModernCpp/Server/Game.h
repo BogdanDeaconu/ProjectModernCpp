@@ -14,11 +14,11 @@
 //	uint8_t DetermineNumberOfRounds(uint8_t n);
 //	void DeterminePlayersTurnOrder();
 //    uint8_t ChooseAdvantage(const Player& player, std::array<uint8_t, 3>& Advantage);
-//    void ConquerTerritory(uint8_t line,uint8_t column, uint8_t order);
-//    void DistributeTerritory(uint8_t line, uint8_t column, uint8_t order);
+//    //void ConquerTerritory(uint8_t line,uint8_t column, uint8_t order);
+//    //void DistributeTerritory(uint8_t line, uint8_t column, uint8_t order);
 //    std::unordered_map<std::string, bool> FiftyFiftyAdvantage();
 //    std::tuple<uint16_t, uint16_t, uint16_t, uint16_t> ChooseAnswerAdvantage(QuestionInt question);
-//    uint16_t SuggestAnswerAdvantage(QuestionInt question);
+//    //uint16_t SuggestAnswerAdvantage(QuestionInt question);
 //private:
 //	std::vector<QuestionBool*>m_questionswithboool;
 //	std::vector<QuestionInt*>m_questionswithinteger;

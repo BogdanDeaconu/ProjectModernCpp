@@ -13,12 +13,12 @@ class Meniu : public QMainWindow
 	Q_OBJECT
 
 public:
-	Meniu(QWidget *parent = nullptr);
+	Meniu(QString username,QWidget *parent = nullptr);
 	~Meniu();
 
 private:
-	Ui::MeniuClass ui;
-	
+    Ui::MeniuClass ui;
+    std::string username;
 public:
 	void SetUserMeniu(QString username);
 	

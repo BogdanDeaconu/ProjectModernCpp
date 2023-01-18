@@ -21,8 +21,8 @@ background-color: rgb(136, 75, 13);</string>
    <widget class="QPushButton" name="EnterGameButton">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>190</y>
+      <x>410</x>
+      <y>170</y>
       <width>161</width>
       <height>81</height>
      </rect>
@@ -32,14 +32,14 @@ background-color: rgb(136, 75, 13);</string>
 border-radius: 15px</string>
     </property>
     <property name="text">
-     <string>ENTER GAME</string>
+     <string>ENTER LOBBY</string>
     </property>
    </widget>
    <widget class="QPushButton" name="StartGameButton">
     <property name="geometry">
      <rect>
-      <x>660</x>
-      <y>190</y>
+      <x>150</x>
+      <y>170</y>
       <width>161</width>
       <height>81</height>
      </rect>
@@ -50,14 +50,14 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgb
 border-radius: 15px</string>
     </property>
     <property name="text">
-     <string>START GAME</string>
+     <string>START LOBBY</string>
     </property>
    </widget>
    <widget class="QPushButton" name="HistoryButton">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>190</y>
+      <x>660</x>
+      <y>170</y>
       <width>161</width>
       <height>81</height>
      </rect>
@@ -181,6 +181,37 @@ border-radius: 15px</string>
     </property>
     <property name="text">
      <string>Log Out</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_2">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>280</y>
+      <width>201</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(170, 85, 0, 255), stop:1 rgba(255, 255, 255, 255));
+border-radius: 15px</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>280</y>
+      <width>81</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(170, 85, 0, 255), stop:1 rgba(255, 255, 255, 255));
+border-radius: 15px</string>
+    </property>
+    <property name="text">
+     <string>Owner Lobby:</string>
     </property>
    </widget>
   </widget>

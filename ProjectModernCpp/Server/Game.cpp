@@ -1,21 +1,21 @@
-﻿//#include "Game.h"
+﻿//#include "game.h"
 //
 //
 //
-//void Game::AddPlayer(const Player& player)
+//void game::addplayer(const player& player)
 //{
 //	m_players.push_back(player);
 //}
-//void Game::SetPlayerAdvantages(const Player& player)
+//void game::setplayeradvantages(const player& player)
 //{
 //	std::array<uint8_t, 3>player_advantage;
 //	for (int i = 0; i < player_advantage.size(); i++)
 //	{
 //		player_advantage[i] = 1;
 //	}
-//	m_PlayersAdvantages.push_back(player_advantage);
+//	m_playersadvantages.push_back(player_advantage);
 //}
-//uint8_t Game::DetermineNumberOfRounds(uint8_t n)
+//uint8_t game::determinenumberofrounds(uint8_t n)
 //{
 //	uint8_t rounds;
 //	if (n == 2)
@@ -36,9 +36,9 @@
 //	return rounds;
 //}
 //
-//void Game::DeterminePlayersTurnOrder()
+//void game::determineplayersturnorder()
 //{
-//	QuestionInt question(1,"În ce an s-a născut Regele Mihai I?", 1921);
+//	questionint question(1,"în ce an s-a născut regele mihai i?", 1921);
 //	std::vector<int>answers;
 //	int answer;
 //	for (int i = 0; i < m_players.size(); i++)
@@ -50,44 +50,44 @@
 //	{
 //		for (int j = 0; j < m_players.size(); j++)
 //		{
-//			if (question.CheckAnswer(answers[i]) > question.CheckAnswer(answers[j]))
+//			if (question.checkanswer(answers[i]) > question.checkanswer(answers[j]))
 //			{
 //				std::swap(answers[i], answers[j]);
-//				//std::swap(Players[i], Players[j]);
+//				//std::swap(players[i], players[j]);
 //				//swap function of two players
 //			}
 //		}
 //	}
 //}
-//uint8_t Game::ChooseAdvantage(const Player& player, std::array<uint8_t, 3>& Advantage)
+//uint8_t game::chooseadvantage(const player& player, std::array<uint8_t, 3>& advantage)
 //{
 //    uint8_t advantage;
 //    uint8_t unavailable_advantage = 4;
 //    int line, column;
 //    std::cin >> line >> column;
 //    std::cin >> advantage;
-//    //if (m_board[line][column].GetScore() >= 200 and Advantage[advantage] != 0)
+//    //if (m_board[line][column].getscore() >= 200 and advantage[advantage] != 0)
 //    //{
 //        //uint32_t new_score;
-//       // new_score = m_board[line][column].GetScore() - 100;
-//        //m_board[line][column].SetScore(new_score);
-//        //Advantage[advantage] = 0;
+//       // new_score = m_board[line][column].getscore() - 100;
+//        //m_board[line][column].setscore(new_score);
+//        //advantage[advantage] = 0;
 //        //return advantage;
 //    //}
 //    return unavailable_advantage;
 //}
-//void Game::ConquerTerritory(uint8_t line, uint8_t column, uint8_t order)
+//void game::conquerterritory(uint8_t line, uint8_t column, uint8_t order)
 //{
 //
-//    //m_board[line][column].SetTerritoryColor(m_players[order].GetColor());
+//    //m_board[line][column].setterritorycolor(m_players[order].getcolor());
 //
 //}
-//void Game::DistributeTerritory(uint8_t line, uint8_t column, uint8_t order)
+//void game::distributeterritory(uint8_t line, uint8_t column, uint8_t order)
 //{
-//    ConquerTerritory(line,column, order);
-//    //m_board[line][column].SetTerritoryScore(100);
+//    conquerterritory(line,column, order);
+//    //m_board[line][column].setterritoryscore(100);
 //}
-//std::unordered_map<std::string, bool> Game::FiftyFiftyAdvantage()
+//std::unordered_map<std::string, bool> game::fiftyfiftyadvantage()
 //{
 //    uint8_t count = 2;
 //    std::string corect_answer;
@@ -101,43 +101,43 @@
 //    return question;
 //}
 //
-//std::tuple<uint16_t, uint16_t, uint16_t, uint16_t> Game::ChooseAnswerAdvantage(QuestionInt question)
+//std::tuple<uint16_t, uint16_t, uint16_t, uint16_t> game::chooseansweradvantage(questionint question)
 //{
 //    std::tuple<uint16_t, uint16_t, uint16_t, uint16_t> answers;
-//    uint16_t corectAnswer = question.GetAnswer();
-//    uint16_t answer2 = question.GetAnswer() - 10;
-//    uint16_t answer3 = question.GetAnswer() + 10;
-//    uint16_t answer4 = question.GetAnswer() - 18;
-//    answers = std::make_tuple(corectAnswer, answer2, answer3, answer4);
+//    uint16_t corectanswer = question.getanswer();
+//    uint16_t answer2 = question.getanswer() - 10;
+//    uint16_t answer3 = question.getanswer() + 10;
+//    uint16_t answer4 = question.getanswer() - 18;
+//    answers = std::make_tuple(corectanswer, answer2, answer3, answer4);
 //    return answers;
 //}
 //
-//uint16_t Game::SuggestAnswerAdvantage(QuestionInt question)
+//uint16_t game::suggestansweradvantage(questionint question)
 //{
-//    uint16_t corectAnswer = question.GetAnswer();
-//    uint16_t closeAnswer1 = question.GetAnswer() - 5;
-//    uint16_t closeAnswer2 = question.GetAnswer() + 5;
-//    uint16_t closeAnswer3 = question.GetAnswer() + 3;
+//    uint16_t corectanswer = question.getanswer();
+//    uint16_t closeanswer1 = question.getanswer() - 5;
+//    uint16_t closeanswer2 = question.getanswer() + 5;
+//    uint16_t closeanswer3 = question.getanswer() + 3;
 //    uint8_t random= 1 + (rand() % 4);
 //    if (random==1)
 //    {
-//        return corectAnswer;
+//        return corectanswer;
 //    }
 //    else
 //    {
 //        if (random==2)
 //        {
-//            return closeAnswer1;
+//            return closeanswer1;
 //        }
 //        else
 //        {
 //            if (random==3)
 //            {
-//                return closeAnswer2;
+//                return closeanswer2;
 //            }
 //            else
 //            {
-//                return closeAnswer3;
+//                return closeanswer3;
 //            }
 //        }
 //    }
