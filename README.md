@@ -1,2 +1,2 @@
-# ProjectModernCpp
-link prezentare: https://youtu.be/q2A6CCPAR0U
+#Triviador
+Triviador is a recreation of the popular Triviador game, developed in C++ using the Qt framework for graphical design and the crow library for client-server architecture.
